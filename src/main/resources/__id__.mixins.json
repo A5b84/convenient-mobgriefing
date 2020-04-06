@@ -1,0 +1,9 @@
+{
+    "required": true,
+    "package": "io.github.a5b84.__package__.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "client": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
