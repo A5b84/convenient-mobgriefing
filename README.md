@@ -19,12 +19,12 @@ The new gamerules are enabled by default.
 - Villagers to harvest crops
 - Sheeps to eat grass
 - Snow Golem to create snow
-- entities to place wither roses when killed by a Wither
 - Rabbits to eat carrot crops
 - Foxes to eat sweet berries
 - non-player entities to:
     - pick up loot
     - turn farmland to dirt when falling
+    - place wither roses when killed by a Wither
     - break turtle eggs
     - lit campfires
 - Evokers to wololo Sheeps
