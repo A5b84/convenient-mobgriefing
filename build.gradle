@@ -4,7 +4,7 @@ plugins {
 }
 
 repositories {
-    maven { url = "https://minecraft.curseforge.com/api/maven" }
+    maven { url "https://minecraft.curseforge.com/api/maven" }
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -23,7 +23,7 @@ dependencies {
     modCompile "net.fabricmc:fabric-loader:${project.loader_version}"
 
     // API Fabric
-    modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    // modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 
 processResources {

@@ -1,0 +1,24 @@
+{
+    "required": true,
+    "package": "io.github.a5b84.convenientmobgriefing.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "mixins": [
+        "BooleanRuleAccessor",
+        "GameRulesMixin",
+        "RulesImpl$Passive$CampfireBlockMixin",
+        "RulesImpl$Passive$FarmlandBlockMixin",
+        "RulesImpl$Passive$TurtleEggBlockMixin",
+        "RulesImpl$Passive$FarmerVillagerTaskMixin",
+        "RulesImpl$Passive$EatGrassGoalMixin",
+        "RulesImpl$Passive$GoalsMixin",
+        "RulesImpl$Passive$EntityMovementMixin",
+        "RulesImpl$Passive$EatSweetBerriesGoalMixin",
+        "RulesImpl$Passive$LivingEntityMixin",
+        "RulesImpl$Wither$WitherEntityMixin",
+        "RulesImpl$Wither$WitherSkullEntityMixin",
+        "RulesImpl$Dragon$EnderDragonEntityMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

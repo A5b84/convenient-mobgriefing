@@ -1,29 +1,20 @@
 {
     "schemaVersion": 1,
 
-    "id": "__id__",
+    "id": "convenient-mobgriefing-gamerules",
     "version": "${version}",
 
-    "name": ".__id__",
-    "description": "bla",
-    "icon": "assets/__id__/icon.png",
+    "name": "Convenient mobGriefing Gamerules",
+    "description": "Splits the `mobGriefing` gamerule into 4 gamerules for more convenience",
+    "icon": "assets/convenient-mobgriefing-gamerules/icon.png",
     "authors": ["Neecko"],
     "contact": {
-        "homepage": "https://github.com/A5b84/__id__",
-        "issues": "https://github.com/A5b84/__id__/issues",
-        "sources": "https://github.com/A5b84/__id__"
+        "homepage": "https://github.com/A5b84/convenient-mobgriefing-gamerules",
+        "issues": "https://github.com/A5b84/convenient-mobgriefing-gamerules/issues",
+        "sources": "https://github.com/A5b84/convenient-mobgriefing-gamerules"
     },
     "license": "CC-BY-NC-4.0",
 
-    "environment": "client",
-    "entrypoints": {
-        "client": ["io.github.a5b84.__package__.Mod"]
-    },
-    "mixins": ["__id__.mixins.json"],
-
-    "depends": {},
-
-    "custom": {
-        "modmenu:clientsideOnly": true
-    }
+    "environment": "*",
+    "mixins": ["convenient-mobgriefing-gamerules.mixins.json"]
 }

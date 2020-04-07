@@ -1,52 +1,40 @@
-# Fabric : Modèle mod client
+# Convenient `mobGriefing` Gamerules
 
-## À modifier pour commencer
+Makes the `mobGriefing` gamerule more convenient by splitting it
+into four gamerules:
+- `mobGriefing` for most mobs that destroy your world
+- `mobGriefingPassive` for passive mobs and things that aren't really annoying
+- `mobGriefingWither` for the Wither
+- `mobGriefingDragon` for the Ender Dragon
 
-1. Copier les trucs d'un dossier qui commence par `__` à la racine
-    (et supprimer les autres) (modèle client par défaut)
-    (à faire hors de VS Code pcq'il remplace au lieu de fusionner)
-2. Dépendances (`build.gradle`) et versions (`gradle.properties`)
-3. Package
-    * Ctrl F + `__package__`
-    * Renommer `src/main/java/io/github/a5b84/__package__`
-4. ID
-    * Ctrl F + `__id__`
-    * Renommer `src/main/resources/__id__.mixins.json`
-    et `src/main/resources/assets/__id__`
-5. Remplacer le `README.md`
+The new gamerules are enabled by default.
 
+`mobGriefing` allows:
+- Creepers and Ghasts to blow stuff up
+- Endermen to take and place blocks
+- Silverfish to be annoying
+- Ravagers to destroy crops and leaves
 
+`mobGriefingPassive` allows:
+- Villagers to harvest crops
+- Sheeps to eat grass
+- Snow Golem to create snow
+- entities to place wither roses when killed by a Wither
+- Rabbits to eat carrot crops
+- Foxes to eat sweet berries
+- non-player entities to:
+    - pick up loot
+    - turn farmland to dirt when falling
+    - break turtle eggs
+    - lit campfires
+- Evokers to wololo Sheeps
 
-## Petits tips
+`mobGriefingWither` allows:
+- Withers to destroy stuff
 
-* Faire faire ses trucs à Gradle
-    * Enregistrer `build.gradle` puis cliquer sur 'Yes'
-
-* Sources
-    * Génération : `./gradlew.bat genSources` (~5 minutes)
-    * Recherche d'un fichier : Ctrl P + `#MinecraftClient` (par exemple)
-
-* Compiler
-    1. `./gradlew.bat build`
-    2. Résultat : `build/libs/[id]-[version].jar`
-    3. `./gradlew.bat build; scp ./build/libs/[id]-[version].jar [...]/.minecraft/mods/`
-    pour gagner du temps (ou Ctrl Shift B dans VS Code)
-
-
-
-### Problèmes / Solutions
-
-* `Failed to get sources`
-    1. Ctrl Shift P + `> Java: Clean the language server workspace`
-    2. `genSources`
-    3. Prier
-
-* Pas d'autocomplete / de résultats dans Ctrl P
-    * Actualiser Gradle
+`mobGriefingDragon` allows:
+- the Ender Dragon to destroy everything
 
 
 
-## Autres
-
-Très inspiré de [fabric-example-mod](https://github.com/FabricMC/fabric-example-mod)
-([CC0](https://github.com/FabricMC/fabric-example-mod/blob/master/LICENSE))
+Requires the [Fabric Mod Loader](https://fabricmc.net)
