@@ -19,15 +19,15 @@ import net.minecraft.world.GameRules.RuleType;
 public abstract class GameRulesMixin {
 
     @Shadow
-    private static <T extends Rule<T>> RuleKey<T> register(String name, RuleType<T> type) {
+    private static <T extends Rule<T>> RuleKey<T> register(String name, GameRules.class_5198 category, RuleType<T> type) {
         return null;
     }
 
     @Inject(method = "<clinit>", at = @At("RETURN"))
     private static void onStaticInit(CallbackInfo ci) {
-        Mod.LENIENT_MOB_GRIEFING = register("mobGriefingPassive", BooleanRuleAccessor.callCreate(true));
-        Mod.WITHER_MOB_GRIEFING = register("mobGriefingWither", BooleanRuleAccessor.callCreate(true));
-        Mod.DRAGON_MOB_GRIEFING = register("mobGriefingDragon", BooleanRuleAccessor.callCreate(true));
+        Mod.LENIENT_MOB_GRIEFING = register("mobGriefingPassive", GameRules.class_5198.field_24095, BooleanRuleAccessor.callCreate(true));
+        Mod.WITHER_MOB_GRIEFING = register("mobGriefingWither", GameRules.class_5198.field_24095, BooleanRuleAccessor.callCreate(true));
+        Mod.DRAGON_MOB_GRIEFING = register("mobGriefingDragon", GameRules.class_5198.field_24095, BooleanRuleAccessor.callCreate(true));
     }
 
 }

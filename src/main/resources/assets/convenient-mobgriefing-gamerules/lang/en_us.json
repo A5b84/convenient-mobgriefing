@@ -1,0 +1,5 @@
+{
+  "gamerule.mobGriefingPassive": "Allow destructive passive mob actions",
+  "gamerule.mobGriefingDragon": "Allow destructive dragon actions",
+  "gamerule.mobGriefingWither": "Allow destructive wither actions"
+}
