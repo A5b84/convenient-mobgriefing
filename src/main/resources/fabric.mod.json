@@ -16,5 +16,9 @@
     "license": "CC-BY-NC-4.0",
 
     "environment": "*",
-    "mixins": ["convenient-mobgriefing-gamerules.mixins.json"]
+    "mixins": ["convenient-mobgriefing-gamerules.mixins.json"],
+
+    "depends": {
+        "minecraft": "<1.16"
+    }
 }
