@@ -16,6 +16,7 @@ import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.mob.EvokerEntity.WololoGoal;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.mob.PiglinEntity;
 import net.minecraft.entity.passive.FoxEntity.EatSweetBerriesGoal;
 import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.entity.passive.SnowGolemEntity;
@@ -109,6 +110,16 @@ public final class RulesImpl {
             /** @see MobEntity#tickMovement
              *  @see SnowGolemEntity#tickMovement */
             @ModifyArg(method = "tickMovement", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+                return Mod.LENIENT_MOB_GRIEFING;
+            }
+        }
+
+        /** Échanges avec les Piglins */
+        @Mixin(PiglinEntity.class)
+        public static abstract class PiglinEntityMixin {
+            /** @see PiglinEntity#canGather */
+            @ModifyArg(method = "canGather", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
                 return Mod.LENIENT_MOB_GRIEFING;
             }

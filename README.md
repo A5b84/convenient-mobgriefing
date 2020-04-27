@@ -17,6 +17,7 @@ The new gamerules are enabled by default.
 
 `mobGriefingPassive` allows:
 - Villagers to harvest crops
+- bartering with Piglins
 - Sheeps to eat grass
 - Snow Golem to create snow
 - Rabbits to eat carrot crops
