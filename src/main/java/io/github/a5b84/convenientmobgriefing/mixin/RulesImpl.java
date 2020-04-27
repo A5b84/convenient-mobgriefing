@@ -35,10 +35,10 @@ public final class RulesImpl {
 
 
 
-    /** Implémentation de `mobGriefingPassive` */
-    public static final class Passive {
+    /** Implémentation de `mobGriefingLenient` */
+    public static final class Lenient {
 
-        private Passive() {}
+        private Lenient() {}
 
         /** Projectiles qui allument des feux de camp */
         @Mixin(CampfireBlock.class)

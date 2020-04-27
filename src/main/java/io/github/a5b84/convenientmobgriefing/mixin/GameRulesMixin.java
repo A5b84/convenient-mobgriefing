@@ -27,7 +27,7 @@ public abstract class GameRulesMixin {
 
     @Inject(method = "<clinit>", at = @At("RETURN"))
     private static void onStaticInit(CallbackInfo ci) {
-        Mod.LENIENT_MOB_GRIEFING = register("mobGriefingPassive", RuleCategory.MOBS, BooleanRuleAccessor.callCreate(true));
+        Mod.LENIENT_MOB_GRIEFING = register("mobGriefingLenient", RuleCategory.MOBS, BooleanRuleAccessor.callCreate(true));
         Mod.WITHER_MOB_GRIEFING = register("mobGriefingWither", RuleCategory.MOBS, BooleanRuleAccessor.callCreate(true));
         Mod.DRAGON_MOB_GRIEFING = register("mobGriefingDragon", RuleCategory.MOBS, BooleanRuleAccessor.callCreate(true));
     }

@@ -3,7 +3,7 @@
 Makes the `mobGriefing` gamerule more convenient by splitting it
 into four gamerules:
 - `mobGriefing` for most mobs that destroy your world
-- `mobGriefingPassive` for passive mobs and things that aren't really annoying
+- `mobGriefingLenient` for passive mobs and things that aren't really annoying
 - `mobGriefingWither` for the Wither
 - `mobGriefingDragon` for the Ender Dragon
 
@@ -15,7 +15,7 @@ The new gamerules are enabled by default.
 - Silverfish to be annoying
 - Ravagers to destroy crops and leaves
 
-`mobGriefingPassive` allows:
+`mobGriefingLenient` allows:
 - Villagers to harvest crops
 - bartering with Piglins
 - Sheeps to eat grass
