@@ -44,7 +44,8 @@ public final class RulesImpl {
         @Mixin(CampfireBlock.class)
         public static abstract class CampfireBlockMixin {
             /** @see CampfireBlock#onProjectileHit */
-            @ModifyArg(method = "onProjectileHit", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            // `require = 0` pour pre 1.15 où ça utilise pas encore mobGriefing
+            @ModifyArg(method = "onProjectileHit", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
@@ -138,8 +139,15 @@ public final class RulesImpl {
         @Mixin(LivingEntity.class)
         public static abstract class LivingEntityMixin {
             /** @see LivingEntity#onKilledBy */
-            @ModifyArg(method = "onKilledBy", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "onKilledBy", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+                return Mod.LENIENT_GRIEFING;
+            }
+
+            /** Pre 19w45a
+             * @see LivingEntity#onDeath */
+            @ModifyArg(method = "onDeath", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            private RuleKey<BooleanRule> mobGriefingProxy_pre19w45a(RuleKey<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -167,8 +175,16 @@ public final class RulesImpl {
         @Mixin(WitherSkullEntity.class)
         public static abstract class WitherSkullEntityMixin {
             /** @see WitherSkullEntity#onCollision */
-            @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+                return Mod.WITHER_GRIEFING;
+            }
+
+            /** @see WitherSkullEntity#onCollision */
+            // Pre 20w13a
+            @ModifyArg(method = "method_7488", remap = false,
+                at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            private RuleKey<BooleanRule> mobGriefingProxy_post1_15_2(RuleKey<BooleanRule> old) {
                 return Mod.WITHER_GRIEFING;
             }
         }
