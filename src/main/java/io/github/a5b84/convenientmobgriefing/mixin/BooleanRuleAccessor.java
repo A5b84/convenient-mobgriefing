@@ -7,14 +7,14 @@ import net.minecraft.world.GameRules.BooleanRule;
 import net.minecraft.world.GameRules.RuleType;
 
 /**
- * Mixin qui permet de récupérer la méthode pour créer la gamerule
+ * Mixin qui permet de récupérer la méthode pour créer les gamerules
  */
 @Mixin(BooleanRule.class)
 public interface BooleanRuleAccessor {
 
     @Invoker
     static RuleType<BooleanRule> callCreate(boolean initialValue) {
-        throw new UnsupportedOperationException("Mixin `BooleanRuleAccessor` has not been applied");
+        return null;
     }
 
 }
