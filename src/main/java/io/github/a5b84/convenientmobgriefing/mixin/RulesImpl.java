@@ -190,8 +190,8 @@ public final class RulesImpl {
         /** Explosion du Wither */
         @Mixin(EnderDragonEntity.class)
         public static abstract class EnderDragonEntityMixin {
-            /** @see EnderDragonEntity#method_6821 */
-            @ModifyArg(method = "method_6821", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            /** @see EnderDragonEntity#destroyBlocks */
+            @ModifyArg(method = "destroyBlocks", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
                 return Mod.DRAGON_MOB_GRIEFING;
             }
