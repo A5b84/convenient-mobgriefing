@@ -47,7 +47,7 @@ public final class RulesImpl {
             // `require = 0` pour pre 1.15 où ça utilise pas encore mobGriefing
             @ModifyArg(method = "onProjectileHit", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -57,7 +57,7 @@ public final class RulesImpl {
             /** @see FarmlandBlock#onLandedUpon */
             @ModifyArg(method = "onLandedUpon", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -67,7 +67,7 @@ public final class RulesImpl {
             /** @see TurtleEggBlock#breaksEgg */
             @ModifyArg(method = "breaksEgg", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -77,7 +77,7 @@ public final class RulesImpl {
             /** @see FarmerVillagerTask#shouldRun */
             @ModifyArg(method = "shouldRun", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -87,7 +87,7 @@ public final class RulesImpl {
             /** @see EatGrassGoal#tick */
             @ModifyArg(method = "tick", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -100,7 +100,7 @@ public final class RulesImpl {
              *  @see RabbitEntity.EatCarrotCropGoal#canStart */
             @ModifyArg(method = "canStart()Z", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -111,7 +111,7 @@ public final class RulesImpl {
              *  @see SnowGolemEntity#tickMovement */
             @ModifyArg(method = "tickMovement", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -121,7 +121,7 @@ public final class RulesImpl {
             /** @see PiglinEntity#canGather */
             @ModifyArg(method = "canGather", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -131,7 +131,7 @@ public final class RulesImpl {
             /** @see EatSweetBerriesGoal#eatSweetBerry */
             @ModifyArg(method = "eatSweetBerry", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -141,14 +141,14 @@ public final class RulesImpl {
             /** @see LivingEntity#onKilledBy */
             @ModifyArg(method = "onKilledBy", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
 
             // Pre 19w45a, compiler en post 19w45a pour que les deux méthodes existent
             /** @see LivingEntity#onDeath */
             @ModifyArg(method = "onDeath", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private RuleKey<BooleanRule> mobGriefingProxy_pre19w45a(RuleKey<BooleanRule> old) {
-                return Mod.LENIENT_MOB_GRIEFING;
+                return Mod.LENIENT_GRIEFING;
             }
         }
 
@@ -167,7 +167,7 @@ public final class RulesImpl {
             /** @see WitherEntity#mobTick */
             @ModifyArg(method = "mobTick", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.WITHER_MOB_GRIEFING;
+                return Mod.WITHER_GRIEFING;
             }
         }
 
@@ -177,7 +177,7 @@ public final class RulesImpl {
             /** @see WitherSkullEntity#onCollision */
             @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.WITHER_MOB_GRIEFING;
+                return Mod.WITHER_GRIEFING;
             }
 
             /** @see WitherSkullEntity#onCollision */
@@ -185,7 +185,7 @@ public final class RulesImpl {
             @ModifyArg(method = "method_7488", remap = false,
                 at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private RuleKey<BooleanRule> mobGriefingProxy_post1_15_2(RuleKey<BooleanRule> old) {
-                return Mod.WITHER_MOB_GRIEFING;
+                return Mod.WITHER_GRIEFING;
             }
         }
 
@@ -204,7 +204,7 @@ public final class RulesImpl {
             /** @see EnderDragonEntity#destroyBlocks */
             @ModifyArg(method = "destroyBlocks", at = @At(value = "INVOKE", target = TARGET), index = 0)
             private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
-                return Mod.DRAGON_MOB_GRIEFING;
+                return Mod.DRAGON_GRIEFING;
             }
         }
 

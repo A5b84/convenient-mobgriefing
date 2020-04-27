@@ -5,8 +5,8 @@ import net.minecraft.world.GameRules.RuleKey;
 
 public class Mod {
 
-    public static RuleKey<BooleanRule> LENIENT_MOB_GRIEFING;
-    public static RuleKey<BooleanRule> WITHER_MOB_GRIEFING;
-    public static RuleKey<BooleanRule> DRAGON_MOB_GRIEFING;
+    public static RuleKey<BooleanRule> LENIENT_GRIEFING;
+    public static RuleKey<BooleanRule> WITHER_GRIEFING;
+    public static RuleKey<BooleanRule> DRAGON_GRIEFING;
 
 }
