@@ -1,20 +1,20 @@
 {
     "schemaVersion": 1,
 
-    "id": "convenient-mobgriefing-gamerules",
+    "id": "convenient-mobgriefing",
     "version": "${version}",
 
     "name": "Convenient mobGriefing Gamerules",
     "description": "Splits the `mobGriefing` gamerule into 4 gamerules for more convenience",
-    "icon": "assets/convenient-mobgriefing-gamerules/icon.png",
+    "icon": "assets/convenient-mobgriefing/icon.png",
     "authors": ["Neecko"],
     "contact": {
-        "homepage": "https://github.com/A5b84/convenient-mobgriefing-gamerules",
-        "issues": "https://github.com/A5b84/convenient-mobgriefing-gamerules/issues",
-        "sources": "https://github.com/A5b84/convenient-mobgriefing-gamerules"
+        "homepage": "https://www.curseforge.com/minecraft/mc-mods/convenient-mobgriefing",
+        "issues": "https://github.com/A5b84/convenient-mobgriefing/issues",
+        "sources": "https://github.com/A5b84/convenient-mobgriefing"
     },
     "license": "CC-BY-NC-4.0",
 
     "environment": "*",
-    "mixins": ["convenient-mobgriefing-gamerules.mixins.json"]
+    "mixins": ["convenient-mobgriefing.mixins.json"]
 }
