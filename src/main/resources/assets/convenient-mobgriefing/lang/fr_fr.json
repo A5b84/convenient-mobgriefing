@@ -1,0 +1,8 @@
+{
+    "gamerule.mobGriefingLenient": "Activer les actions passives de mobs",
+    "gamerule.mobGriefingLenient.description": "Permet aux mobs de faire des actions passives comme cultiver les champs pour les villageois, troquer avec les piglins, rammasser des items à terre.",
+    "gamerule.mobGriefingDragon": "Permettre à l'Ender Dragon de casser des blocs",
+    "gamerule.mobGriefingDragon.description": "Remplace la gamerule mobGriefing",
+    "gamerule.mobGriefingWither": "Permettre au Wither de casser des blocs",
+    "gamerule.mobGriefingWither.description": "Remplace la gamerule mobGriefing"
+}
