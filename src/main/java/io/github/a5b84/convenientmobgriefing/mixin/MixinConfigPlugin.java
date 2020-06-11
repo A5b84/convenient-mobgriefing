@@ -16,7 +16,7 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
     // De https://minecraft.gamepedia.com/Data_version#List_of_data_versions
     private static final int V20w17a = 2529;
-    private static final int GAME_VERSION = new MinecraftVersion().getWorldVersion();
+    private static final int GAME_VERSION = MinecraftVersion.create().getWorldVersion();
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
