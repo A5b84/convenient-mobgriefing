@@ -22,7 +22,7 @@ import net.minecraft.entity.passive.RabbitEntity;
 import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.projectile.WitherSkullEntity;
 import net.minecraft.world.GameRules.BooleanRule;
-import net.minecraft.world.GameRules.RuleKey;
+import net.minecraft.world.GameRules.Key;
 
 /**
  * Classe qui contient toutes les mixins qui injectent des trucs
@@ -31,7 +31,7 @@ public final class RulesImpl {
 
     private RulesImpl() {}
 
-    private static final String TARGET = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$RuleKey;)Z";
+    private static final String TARGET = "Lnet/minecraft/world/GameRules;getBoolean(Lnet/minecraft/world/GameRules$Key;)Z";
 
 
 
@@ -46,7 +46,7 @@ public final class RulesImpl {
             /** @see CampfireBlock#onProjectileHit */
             // `require = 0` pour pre 1.15 où ça utilise pas encore mobGriefing
             @ModifyArg(method = "onProjectileHit", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -56,7 +56,7 @@ public final class RulesImpl {
         public static abstract class FarmlandBlockMixin {
             /** @see FarmlandBlock#onLandedUpon */
             @ModifyArg(method = "onLandedUpon", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -66,7 +66,7 @@ public final class RulesImpl {
         public static abstract class TurtleEggBlockMixin {
             /** @see TurtleEggBlock#breaksEgg */
             @ModifyArg(method = "breaksEgg", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -76,7 +76,7 @@ public final class RulesImpl {
         public static abstract class FarmerVillagerTaskMixin {
             /** @see FarmerVillagerTask#shouldRun */
             @ModifyArg(method = "shouldRun", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -86,7 +86,7 @@ public final class RulesImpl {
         public static abstract class EatGrassGoalMixin {
             /** @see EatGrassGoal#tick */
             @ModifyArg(method = "tick", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -99,7 +99,7 @@ public final class RulesImpl {
              *  @see WololoGoal#canStart
              *  @see RabbitEntity.EatCarrotCropGoal#canStart */
             @ModifyArg(method = "canStart()Z", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -110,7 +110,7 @@ public final class RulesImpl {
             /** @see MobEntity#tickMovement
              *  @see SnowGolemEntity#tickMovement */
             @ModifyArg(method = "tickMovement", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -120,7 +120,7 @@ public final class RulesImpl {
         public static abstract class PiglinEntityMixin {
             /** @see PiglinEntity#canGather */
             @ModifyArg(method = "canGather", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -130,7 +130,7 @@ public final class RulesImpl {
         public static abstract class EatSweetBerriesGoalMixin {
             /** @see EatSweetBerriesGoal#eatSweetBerry */
             @ModifyArg(method = "eatSweetBerry", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -140,14 +140,14 @@ public final class RulesImpl {
         public static abstract class LivingEntityMixin {
             /** @see LivingEntity#onKilledBy */
             @ModifyArg(method = "onKilledBy", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
 
             /** Pre 19w45a
              * @see LivingEntity#onDeath */
             @ModifyArg(method = "onDeath", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy_pre19w45a(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy_pre19w45a(Key<BooleanRule> old) {
                 return Mod.LENIENT_GRIEFING;
             }
         }
@@ -166,7 +166,7 @@ public final class RulesImpl {
         public static abstract class WitherEntityMixin {
             /** @see WitherEntity#mobTick */
             @ModifyArg(method = "mobTick", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.WITHER_GRIEFING;
             }
         }
@@ -176,7 +176,7 @@ public final class RulesImpl {
         public static abstract class WitherSkullEntityMixin {
             /** @see WitherSkullEntity#onCollision */
             @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.WITHER_GRIEFING;
             }
 
@@ -184,7 +184,7 @@ public final class RulesImpl {
             // Pre 20w13a
             @ModifyArg(method = "method_7488", remap = false,
                 at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy_post1_15_2(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy_post1_15_2(Key<BooleanRule> old) {
                 return Mod.WITHER_GRIEFING;
             }
         }
@@ -203,7 +203,7 @@ public final class RulesImpl {
         public static abstract class EnderDragonEntityMixin {
             /** @see EnderDragonEntity#destroyBlocks */
             @ModifyArg(method = "destroyBlocks", at = @At(value = "INVOKE", target = TARGET), index = 0)
-            private RuleKey<BooleanRule> mobGriefingProxy(RuleKey<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return Mod.DRAGON_GRIEFING;
             }
         }

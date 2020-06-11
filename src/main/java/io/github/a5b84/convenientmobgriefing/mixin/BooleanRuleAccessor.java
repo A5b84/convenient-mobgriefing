@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 import net.minecraft.world.GameRules.BooleanRule;
-import net.minecraft.world.GameRules.RuleType;
+import net.minecraft.world.GameRules.Type;
 
 /**
  * Mixin qui permet de récupérer la méthode pour créer les gamerules
@@ -13,7 +13,7 @@ import net.minecraft.world.GameRules.RuleType;
 public interface BooleanRuleAccessor {
 
     @Invoker
-    static RuleType<BooleanRule> callCreate(boolean initialValue) {
+    static Type<BooleanRule> callCreate(boolean initialValue) {
         return null;
     }
 
