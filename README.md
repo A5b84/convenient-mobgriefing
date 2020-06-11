@@ -4,8 +4,7 @@
 
 
 
-Makes the `mobGriefing` gamerule more convenient by splitting it
-into four gamerules:
+Makes the `mobGriefing` gamerule more convenient by splitting it into four gamerules:
 
 - `mobGriefing` for most mobs that destroy your world
 - `mobGriefingLenient` for passive mobs and things that aren't really annoying
@@ -56,3 +55,5 @@ New gamerules are enabled by default.
 
 
 Requires the [Fabric Mod Loader](https://fabricmc.net)
+
+The [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) is required for localisation, but the mod should still work without it.
