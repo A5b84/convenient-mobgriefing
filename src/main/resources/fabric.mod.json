@@ -4,7 +4,7 @@
     "id": "convenient-mobgriefing",
     "version": "${version}",
 
-    "name": "Convenient mobGriefing Gamerules",
+    "name": "Convenient mobGriefing",
     "description": "Splits the mobGriefing gamerule into 4 gamerules for more convenience",
     "icon": "assets/convenient-mobgriefing/icon.png",
     "authors": ["Neecko"],
