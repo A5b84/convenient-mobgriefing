@@ -1,5 +1,9 @@
 # Changelog
 
+### [1.1.4]
+- New icon
+- Fixed [#3](https://github.com/A5b84/convenient-mobgriefing/issues/3)
+
 ### [1.1.3]
 - Lowered mixin priority, fixes potential incompatibility issues
 
@@ -35,3 +39,4 @@ Compatible with Fabric 1.14-20w16a
 [1.1.1]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v1.1.1
 [1.1.2]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v1.1.2
 [1.1.3]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v1.1.3
+[1.1.4]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v1.1.4
