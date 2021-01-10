@@ -1,9 +1,5 @@
 # Convenient `mobGriefing`
 
-[CurseForge link](https://www.curseforge.com/minecraft/mc-mods/convenient-mobgriefing)
-
-
-
 Makes the `mobGriefing` gamerule more convenient by splitting it into four gamerules:
 
 - `mobGriefing` for most mobs that destroy your world
@@ -37,23 +33,16 @@ New gamerules are enabled by default.
     - turn farmland to dirt when falling
     - place wither roses when killed by a Wither
     - break turtle eggs
+        - This also includes Zombies and Zombified Piglins pathfinding towards them
     - lit campfires
 - Evokers to wololo Sheeps
 
 
 
-`mobGriefingWither` allows:
+`mobGriefingWither` allows the Wither to destroy stuff
 
-- Withers to destroy stuff
-
-
-
-`mobGriefingDragon` allows:
-
-- the Ender Dragon to destroy everything
+`mobGriefingDragon` allows the the Ender Dragon to stuff
 
 
 
-Requires the [Fabric Mod Loader](https://fabricmc.net)
-
-The [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) is required for localisation, but the mod should still work without it.
+Requires the [Fabric Loader](https://fabricmc.net). The [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) is only required for localisation.
