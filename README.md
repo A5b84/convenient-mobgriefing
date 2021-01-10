@@ -41,7 +41,7 @@ New gamerules are enabled by default.
 
 `mobGriefingWither` allows the Wither to destroy stuff
 
-`mobGriefingDragon` allows the the Ender Dragon to stuff
+`mobGriefingDragon` allows the Ender Dragon to stuff
 
 
 
