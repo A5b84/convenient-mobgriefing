@@ -1,5 +1,13 @@
 # Changelog
 
+### Unreleased
+- Renamed game rules to sound more natural :
+    - `mobGriefingLenient` -> `lenientGriefing`
+    - `mobGriefingWither` -> `witherGriefing`
+    - `mobGriefingDragon` -> `dragonGriefing`
+    - ⚠️ Settings from older versions will be lost. Your world may go boom.
+- Now requires [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
+
 ### [1.1.4]
 - New icon
 - Fixed [#3](https://github.com/A5b84/convenient-mobgriefing/issues/3)

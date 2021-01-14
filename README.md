@@ -3,9 +3,9 @@
 Makes the `mobGriefing` gamerule more convenient by splitting it into four gamerules:
 
 - `mobGriefing` for most mobs that destroy your world
-- `mobGriefingLenient` for passive mobs and things that aren't really annoying
-- `mobGriefingWither` for the Wither
-- `mobGriefingDragon` for the Ender Dragon
+- `lenientGriefing` for passive mobs and things that aren't really annoying
+- `witherGriefing` for the Wither
+- `dragonGriefing` for the Ender Dragon
 
 New gamerules are enabled by default.
 
@@ -20,7 +20,7 @@ New gamerules are enabled by default.
 
 
 
-`mobGriefingLenient` allows:
+`lenientGriefing` allows:
 
 - Villagers to harvest crops
 - bartering with Piglins
@@ -39,9 +39,9 @@ New gamerules are enabled by default.
 
 
 
-`mobGriefingWither` allows the Wither to destroy stuff
+`witherGriefing` allows the Wither to destroy stuff
 
-`mobGriefingDragon` allows the Ender Dragon to stuff
+`dragonGriefing` allows the Ender Dragon to stuff
 
 
 

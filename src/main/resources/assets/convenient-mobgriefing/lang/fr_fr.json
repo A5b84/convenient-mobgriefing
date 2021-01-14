@@ -1,8 +1,8 @@
 {
-    "gamerule.mobGriefingLenient": "Actions passives de mobs",
-    "gamerule.mobGriefingLenient.description": "Permet aux mobs de faire des actions passives comme cultiver les champs pour les PNJs, troquer avec les piglins, ramasser et s'équiper d'items à terre, ...",
-    "gamerule.mobGriefingDragon": "Destruction par l'Ender Dragon",
-    "gamerule.mobGriefingDragon.description": "Remplace la règle 'mobGriefing' vanilla.",
-    "gamerule.mobGriefingWither": "Destruction par le Wither",
-    "gamerule.mobGriefingWither.description": "Remplace la règle 'mobGriefing' vanilla."
+    "gamerule.lenientGriefing": "Actions passives de mobs",
+    "gamerule.lenientGriefing.description": "Remplace la règle 'mobGriefing' vanilla. Permet aux mobs de faire des actions passives comme cultiver les champs pour les PNJs, troquer avec les piglins, ramasser et des items, etc.",
+    "gamerule.dragonGriefing": "Destruction par l'Ender Dragon",
+    "gamerule.dragonGriefing.description": "Remplace la règle 'mobGriefing' vanilla.",
+    "gamerule.witherGriefing": "Destruction par le Wither",
+    "gamerule.witherGriefing.description": "Remplace la règle 'mobGriefing' vanilla."
 }

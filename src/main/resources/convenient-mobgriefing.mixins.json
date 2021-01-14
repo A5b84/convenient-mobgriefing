@@ -1,12 +1,8 @@
 {
     "required": true,
     "package": "io.github.a5b84.convenientmobgriefing.mixin",
-    "plugin": "io.github.a5b84.convenientmobgriefing.mixin.MixinConfigPlugin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-        "BooleanRuleAccessor",
-        "GameRulesMixins$Post20w17a",
-        "GameRulesMixins$Pre20w17a",
         "RulesImpl$Lenient$CampfireBlockMixin",
         "RulesImpl$Lenient$FarmlandBlockMixin",
         "RulesImpl$Lenient$TurtleEggBlockMixin",

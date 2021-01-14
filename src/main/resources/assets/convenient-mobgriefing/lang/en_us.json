@@ -1,8 +1,8 @@
 {
-    "gamerule.mobGriefingLenient": "Allow non-destructive mob actions",
-    "gamerule.mobGriefingLenient.description": "Controls passive mob actions like Villager farming, Piglin bartering, mobs equipping dropped items, ...",
-    "gamerule.mobGriefingDragon": "Allow Ender Dragon griefing",
-    "gamerule.mobGriefingDragon.description": "Overrides the vanilla mobGriefing game rule.",
-    "gamerule.mobGriefingWither": "Allow Wither griefing",
-    "gamerule.mobGriefingWither.description": "Overrides the vanilla mobGriefing game rule."
+    "gamerule.lenientGriefing": "Allow non-destructive mob actions",
+    "gamerule.lenientGriefing.description": "Overrides the vanilla mobGriefing game rule. Controls passive mob actions like Villager farming, Piglin bartering, mobs picking up items, ...",
+    "gamerule.dragonGriefing": "Allow Ender Dragon griefing",
+    "gamerule.dragonGriefing.description": "Overrides the vanilla mobGriefing game rule.",
+    "gamerule.witherGriefing": "Allow Wither griefing",
+    "gamerule.witherGriefing.description": "Overrides the vanilla mobGriefing game rule."
 }

@@ -16,5 +16,11 @@
     "license": "LGPL-3.0-or-later",
 
     "environment": "*",
-    "mixins": ["convenient-mobgriefing.mixins.json"]
+    "entrypoints": {
+        "main": ["io.github.a5b84.convenientmobgriefing.Mod"]
+    },
+    "mixins": ["convenient-mobgriefing.mixins.json"],
+    "depends": {
+        "fabric-game-rule-api-v1": "*"
+    }
 }
