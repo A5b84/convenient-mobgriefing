@@ -13,7 +13,7 @@ A changelog is available [here](CHANGELOG.md).
 `mobGriefing` allows:
 - Creepers and Ghasts to blow stuff up
 - Endermen to take and place blocks
-- Silverfish to be infest blocks
+- Silverfish to infest blocks
 - Ravagers to destroy crops and leaves
 
 `lenientGriefing` allows:
