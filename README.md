@@ -8,6 +8,8 @@ A [Fabric](https://fabricmc.net) mod that gives more control over the `mobGriefi
 
 Requires [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api). New gamerules are enabled by default.
 
+A changelog is available [here](CHANGELOG.md).
+
 `mobGriefing` allows:
 - Creepers and Ghasts to blow stuff up
 - Endermen to take and place blocks
