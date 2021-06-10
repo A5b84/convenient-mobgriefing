@@ -1,24 +1,25 @@
 {
-    "required": true,
-    "package": "io.github.a5b84.convenientmobgriefing.mixin",
-    "compatibilityLevel": "JAVA_8",
-    "mixins": [
-        "RulesImpl$Lenient$CampfireBlockMixin",
-        "RulesImpl$Lenient$FarmlandBlockMixin",
-        "RulesImpl$Lenient$TurtleEggBlockMixin",
-        "RulesImpl$Lenient$FarmerVillagerTaskMixin",
-        "RulesImpl$Lenient$EatGrassGoalMixin",
-        "RulesImpl$Lenient$GoalsMixin",
-        "RulesImpl$Lenient$EntityMovementMixin",
-        "RulesImpl$Lenient$PiglinEntityMixin",
-        "RulesImpl$Lenient$EatSweetBerriesGoalMixin",
-        "RulesImpl$Lenient$LivingEntityMixin",
-        "RulesImpl$Wither$WitherEntityMixin",
-        "RulesImpl$Wither$WitherSkullEntityMixin",
-        "RulesImpl$Dragon$EnderDragonEntityMixin"
-    ],
-    "injectors": {
-        "defaultRequire": 1
-    },
-    "mixinPriority": 1623
+  "required": true,
+  "minVersion": "0.8",
+  "package": "io.github.a5b84.convenientmobgriefing.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "RulesImpl$Lenient$CampfireBlockMixin",
+    "RulesImpl$Lenient$FarmlandBlockMixin",
+    "RulesImpl$Lenient$TurtleEggBlockMixin",
+    "RulesImpl$Lenient$FarmerVillagerTaskMixin",
+    "RulesImpl$Lenient$EatGrassGoalMixin",
+    "RulesImpl$Lenient$GoalsMixin",
+    "RulesImpl$Lenient$EntityMovementMixin",
+    "RulesImpl$Lenient$PiglinEntityMixin",
+    "RulesImpl$Lenient$EatSweetBerriesGoalMixin",
+    "RulesImpl$Lenient$LivingEntityMixin",
+    "RulesImpl$Wither$WitherEntityMixin",
+    "RulesImpl$Wither$WitherSkullEntityMixin",
+    "RulesImpl$Dragon$EnderDragonEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixinPriority": 1623
 }

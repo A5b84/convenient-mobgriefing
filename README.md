@@ -10,28 +10,28 @@ Requires [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api). 
 
 A changelog is available [here](CHANGELOG.md).
 
-`mobGriefing` allows:
-- Creepers and Ghasts to blow stuff up
-- Endermen to take and place blocks
-- Silverfish to infest blocks
-- Ravagers to destroy crops and leaves
+`mobGriefing` controls:
+- Creepers and Ghasts destruction
+- Endermen taking and placing blocks
+- Silverfish infesting blocks
+- Ravagers destroying crops and leaves
 
-`lenientGriefing` allows:
-- Villagers to harvest crops
-- bartering with Piglins
-- Sheeps to eat grass
-- Snow Golem to create snow
-- Rabbits to eat carrot crops
-- Foxes to eat sweet berries
-- non-player entities to:
-  - pick up loot
-  - turn farmland into dirt
-  - place wither roses when killed by a Wither
+`lenientGriefing` controls:
+- Villagers harvesting crops
+- Piglin bartering
+- Sheeps eating grass
+- Snow Golem placing snow
+- Rabbits eating carrot crops
+- Foxes eating Sweet Berries
+- non-player entities:
+  - picking up dropped items
+  - turning farmland into dirt
+  - placing wither roses when killed by a Wither
     - Wither Roses are dropped as items when this rule is disabled (vanilla behavior)
-  - break turtle eggs
+  - breaking turtle eggs
     - This also includes Zombies and Zombified Piglins pathfinding towards them
-  - lit campfires
-- Evokers to wololo Sheeps
+  - litting campfires
+- Evokers wololo-ing Sheeps
 
 `witherGriefing` allows the Wither to destroy stuff.
 
