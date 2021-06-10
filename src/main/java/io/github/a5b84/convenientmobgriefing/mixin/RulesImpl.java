@@ -25,9 +25,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.DRAGON_GRIEFING;
 import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 import static io.github.a5b84.convenientmobgriefing.Mod.WITHER_GRIEFING;
 
-/**
- * Classe qui contient toutes les mixins qui injectent des trucs
- */
+/** Class holding all the mixins */
 public final class RulesImpl {
 
     private RulesImpl() {}
@@ -36,7 +34,7 @@ public final class RulesImpl {
 
 
 
-    /** Implémentation de `lenientGriefing` */
+    /** lenientGriefing implementation */
     public static final class Lenient {
 
         private Lenient() {}
@@ -44,14 +42,16 @@ public final class RulesImpl {
         /** Projectiles qui allument des feux de camp */
         @Mixin(CampfireBlock.class)
         public static abstract class CampfireBlockMixin {
-            // `require = 0` pour pre 1.15 où ça utilise pas encore mobGriefing
+            // `require = 0` because it was added somewhere in 1.15 and later
+            // removed (during the 1.17 snapshots?)
+            @SuppressWarnings("UnresolvedMixinReference")
             @ModifyArg(method = "onProjectileHit", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
         }
 
-        /** Entités qui cassent les champs en tombant */
+        /** Farmland trampling */
         @Mixin(FarmlandBlock.class)
         public static abstract class FarmlandBlockMixin {
             @ModifyArg(method = "onLandedUpon", at = @At(value = "INVOKE", target = TARGET), index = 0)
@@ -60,7 +60,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Mobs qui essaient de casser les oeufs de tortues */
+        /** Mobs trying to destroy turtle eggs */
         @Mixin(TurtleEggBlock.class)
         public static abstract class TurtleEggBlockMixin {
             @ModifyArg(method = "breaksEgg", at = @At(value = "INVOKE", target = TARGET), index = 0)
@@ -69,7 +69,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Villageois paysans qui font leur travail */
+        /** Farmer villagers harvesting crops */
         @Mixin(FarmerVillagerTask.class)
         public static abstract class FarmerVillagerTaskMixin {
             @ModifyArg(method = "shouldRun", at = @At(value = "INVOKE", target = TARGET), index = 0)
@@ -78,7 +78,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Moutons qui mange de l'herbe */
+        /** Sheep eating grass */
         @Mixin(EatGrassGoal.class)
         public static abstract class EatGrassGoalMixin {
             @ModifyArg(method = "tick", at = @At(value = "INVOKE", target = TARGET), index = 0)
@@ -87,7 +87,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Objectifs d'IA */
+        /** Miscellaneous AI goals */
         @Mixin(value = { StepAndDestroyBlockGoal.class, WololoGoal.class },
                targets = "net/minecraft/entity/passive/RabbitEntity$EatCarrotCropGoal")
         public static abstract class GoalsMixin {
@@ -97,7 +97,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Mobs qui lootent et golem de neige qui mettent de la neige par terre */
+        /** Mobs picking up drop items and Snow Golem placing snow */
         @Mixin({ MobEntity.class, SnowGolemEntity.class })
         public static abstract class EntityMovementMixin {
             @ModifyArg(method = "tickMovement", at = @At(value = "INVOKE", target = TARGET), index = 0)
@@ -106,7 +106,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Échanges avec les Piglins */
+        /** Piglin bartering */
         @Mixin(PiglinEntity.class)
         public static abstract class PiglinEntityMixin {
             @ModifyArg(method = "canGather", at = @At(value = "INVOKE", target = TARGET), index = 0)
@@ -115,7 +115,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Renards qui mangent des baies */
+        /** Foxes eating Sweet Berries */
         @Mixin(EatSweetBerriesGoal.class)
         public static abstract class EatSweetBerriesGoalMixin {
             @ModifyArg(method = "eatSweetBerry", at = @At(value = "INVOKE", target = TARGET), index = 0)
@@ -124,7 +124,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Entités qui droppent des wither roses */
+        /** Entities placing wither roses when killed by a Wither */
         @Mixin(LivingEntity.class)
         public static abstract class LivingEntityMixin {
             @ModifyArg(method = "onKilledBy", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
@@ -144,12 +144,12 @@ public final class RulesImpl {
 
 
 
-    /** Implémentation de `witherGriefing` */
+    /** witherGriefing implementation */
     public static final class Wither {
 
         private Wither() {}
 
-        /** Explosion du Wither */
+        /** Wither explosion */
         @Mixin(WitherEntity.class)
         public static abstract class WitherEntityMixin {
             @ModifyArg(method = "mobTick", at = @At(value = "INVOKE", target = TARGET), index = 0)
@@ -158,7 +158,7 @@ public final class RulesImpl {
             }
         }
 
-        /** Explosion des crânes */
+        /** Skull explosions */
         @Mixin(WitherSkullEntity.class)
         public static abstract class WitherSkullEntityMixin {
             @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
@@ -179,7 +179,7 @@ public final class RulesImpl {
 
 
 
-    /** Implémentation de `dragonGriefing` */
+    /** dragonGriefing implementation */
     public static final class Dragon {
 
         private Dragon() {}
