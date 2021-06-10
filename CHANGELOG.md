@@ -2,9 +2,14 @@
 
 - [Compatibility table](#compatibility-table)
 
+
+
+### [2.0.1]
+- Fixed a crash on startup in 1.17 ([#5](https://github.com/A5b84/convenient-mobgriefing/issues/5))
+
 ### [2.0.0]
 - Renamed the game rules to sound more natural:
-    - ⚠️ Settings from older versions will be lost. Your world may go boom.
+    - ⚠️ Settings from older versions will be lost. Don't forget to change them again after updating or your world may go boom.
     - `mobGriefingLenient` -> `lenientGriefing`
     - `mobGriefingWither` -> `witherGriefing`
     - `mobGriefingDragon` -> `dragonGriefing`
@@ -36,11 +41,12 @@
 
 
 ### Compatibility table
-| Version     | 1.14-20w16a | 20w17a-20w21a | 20w22a+ |
-|------------:|:-----------:|:-------------:|:-------:|
+| Version     | 1.14-20w16a | 20w17a-20w21a | 20w22a-1.16.5 | 1.17+ |
+|------------:|:-----------:|:-------------:|:-------------:|:-----:|
 | 1.0.0       | X
 | 1.1.0-1.1.1 | X           | X
-| 1.1.2+      | X           | X             | X
+| 1.1.2-2.0.0 | X           | X             | X
+| 2.0.1       | X           | X             | X             | X
 
 
 
@@ -51,3 +57,4 @@
 [1.1.3]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v1.1.3
 [1.1.4]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v1.1.4
 [2.0.0]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.0.0
+[2.0.1]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.0.1

@@ -54,8 +54,15 @@ public final class RulesImpl {
         /** Farmland trampling */
         @Mixin(FarmlandBlock.class)
         public static abstract class FarmlandBlockMixin {
-            @ModifyArg(method = "onLandedUpon", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "onLandedUpon", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
+                return LENIENT_GRIEFING;
+            }
+
+            // <= 1.16.5 (?)
+            @SuppressWarnings("UnresolvedMixinReference")
+            @ModifyArg(method = "method_9554(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_1297;F)V", remap = false, at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            private Key<BooleanRule> mobGriefingProxy_pre1_17(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
         }
@@ -184,7 +191,6 @@ public final class RulesImpl {
 
         private Dragon() {}
 
-        /** Explosion du Wither */
         @Mixin(EnderDragonEntity.class)
         public static abstract class EnderDragonEntityMixin {
             @ModifyArg(method = "destroyBlocks", at = @At(value = "INVOKE", target = TARGET), index = 0)
