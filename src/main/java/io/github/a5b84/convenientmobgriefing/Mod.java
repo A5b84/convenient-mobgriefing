@@ -12,7 +12,6 @@ public class Mod implements ModInitializer {
     public static GameRules.Key<BooleanRule> WITHER_GRIEFING = register("witherGriefing");
     public static GameRules.Key<BooleanRule> DRAGON_GRIEFING = register("dragonGriefing");
 
-    /** Enregistre une gamerule */
     private static GameRules.Key<BooleanRule> register(String name) {
         return GameRuleRegistry.register(
                 name, GameRules.Category.MOBS,

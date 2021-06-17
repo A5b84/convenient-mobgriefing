@@ -39,7 +39,7 @@ public final class RulesImpl {
 
         private Lenient() {}
 
-        /** Projectiles qui allument des feux de camp */
+        /** Projectiles litting campfires */
         @Mixin(CampfireBlock.class)
         public static abstract class CampfireBlockMixin {
             // `require = 0` because it was added somewhere in 1.15 and later
@@ -177,7 +177,7 @@ public final class RulesImpl {
             @SuppressWarnings("UnresolvedMixinReference")
             @ModifyArg(method = "method_7488", remap = false,
                 at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
-            private Key<BooleanRule> mobGriefingProxy_post1_15_2(Key<BooleanRule> old) {
+            private Key<BooleanRule> mobGriefingProxy_pre20w13a(Key<BooleanRule> old) {
                 return WITHER_GRIEFING;
             }
         }
