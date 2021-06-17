@@ -45,7 +45,7 @@ public final class RulesImpl {
             // `require = 0` because it was added somewhere in 1.15 and later
             // removed (during the 1.17 snapshots?)
             @SuppressWarnings("UnresolvedMixinReference")
-            @ModifyArg(method = "onProjectileHit", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            @ModifyArg(method = "onProjectileHit", at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -54,14 +54,14 @@ public final class RulesImpl {
         /** Farmland trampling */
         @Mixin(FarmlandBlock.class)
         public static abstract class FarmlandBlockMixin {
-            @ModifyArg(method = "onLandedUpon", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            @ModifyArg(method = "onLandedUpon", at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
 
             // <= 1.16.5 (?)
             @SuppressWarnings("UnresolvedMixinReference")
-            @ModifyArg(method = "method_9554(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_1297;F)V", remap = false, at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            @ModifyArg(method = "method_9554(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_1297;F)V", remap = false, at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy_pre1_17(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -70,7 +70,7 @@ public final class RulesImpl {
         /** Mobs trying to destroy turtle eggs */
         @Mixin(TurtleEggBlock.class)
         public static abstract class TurtleEggBlockMixin {
-            @ModifyArg(method = "breaksEgg", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "breaksEgg", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -79,7 +79,7 @@ public final class RulesImpl {
         /** Farmer villagers harvesting crops */
         @Mixin(FarmerVillagerTask.class)
         public static abstract class FarmerVillagerTaskMixin {
-            @ModifyArg(method = "shouldRun", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "shouldRun", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -88,7 +88,7 @@ public final class RulesImpl {
         /** Sheep eating grass */
         @Mixin(EatGrassGoal.class)
         public static abstract class EatGrassGoalMixin {
-            @ModifyArg(method = "tick", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "tick", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -98,7 +98,7 @@ public final class RulesImpl {
         @Mixin(value = { StepAndDestroyBlockGoal.class, WololoGoal.class },
                targets = "net/minecraft/entity/passive/RabbitEntity$EatCarrotCropGoal")
         public static abstract class GoalsMixin {
-            @ModifyArg(method = "canStart()Z", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "canStart()Z", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -107,7 +107,7 @@ public final class RulesImpl {
         /** Mobs picking up drop items and Snow Golem placing snow */
         @Mixin({ MobEntity.class, SnowGolemEntity.class })
         public static abstract class EntityMovementMixin {
-            @ModifyArg(method = "tickMovement", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "tickMovement", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -116,7 +116,7 @@ public final class RulesImpl {
         /** Piglin bartering */
         @Mixin(PiglinEntity.class)
         public static abstract class PiglinEntityMixin {
-            @ModifyArg(method = "canGather", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "canGather", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -125,7 +125,7 @@ public final class RulesImpl {
         /** Foxes eating Sweet Berries */
         @Mixin(EatSweetBerriesGoal.class)
         public static abstract class EatSweetBerriesGoalMixin {
-            @ModifyArg(method = "eatSweetBerry", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "eatSweetBerry", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -134,14 +134,14 @@ public final class RulesImpl {
         /** Entities placing wither roses when killed by a Wither */
         @Mixin(LivingEntity.class)
         public static abstract class LivingEntityMixin {
-            @ModifyArg(method = "onKilledBy", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            @ModifyArg(method = "onKilledBy", at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
 
             /** Pre 19w45a */
             @SuppressWarnings("UnresolvedMixinReference")
-            @ModifyArg(method = "onDeath", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            @ModifyArg(method = "onDeath", at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy_pre19w45a(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
@@ -159,7 +159,7 @@ public final class RulesImpl {
         /** Wither explosion */
         @Mixin(WitherEntity.class)
         public static abstract class WitherEntityMixin {
-            @ModifyArg(method = "mobTick", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "mobTick", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return WITHER_GRIEFING;
             }
@@ -168,7 +168,7 @@ public final class RulesImpl {
         /** Skull explosions */
         @Mixin(WitherSkullEntity.class)
         public static abstract class WitherSkullEntityMixin {
-            @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+            @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return WITHER_GRIEFING;
             }
@@ -176,7 +176,7 @@ public final class RulesImpl {
             /** Pre 20w13a */
             @SuppressWarnings("UnresolvedMixinReference")
             @ModifyArg(method = "method_7488", remap = false,
-                at = @At(value = "INVOKE", target = TARGET), index = 0, require = 0)
+                at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy_pre20w13a(Key<BooleanRule> old) {
                 return WITHER_GRIEFING;
             }
@@ -193,7 +193,7 @@ public final class RulesImpl {
 
         @Mixin(EnderDragonEntity.class)
         public static abstract class EnderDragonEntityMixin {
-            @ModifyArg(method = "destroyBlocks", at = @At(value = "INVOKE", target = TARGET), index = 0)
+            @ModifyArg(method = "destroyBlocks", at = @At(value = "INVOKE", target = TARGET))
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return DRAGON_GRIEFING;
             }

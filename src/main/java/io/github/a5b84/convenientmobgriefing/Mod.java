@@ -8,9 +8,10 @@ import net.minecraft.world.GameRules.BooleanRule;
 
 public class Mod implements ModInitializer {
 
-    public static GameRules.Key<BooleanRule> LENIENT_GRIEFING = register("lenientGriefing");
-    public static GameRules.Key<BooleanRule> WITHER_GRIEFING = register("witherGriefing");
-    public static GameRules.Key<BooleanRule> DRAGON_GRIEFING = register("dragonGriefing");
+    public static final GameRules.Key<BooleanRule>
+            LENIENT_GRIEFING = register("lenientGriefing"),
+            WITHER_GRIEFING = register("witherGriefing"),
+            DRAGON_GRIEFING = register("dragonGriefing");
 
     private static GameRules.Key<BooleanRule> register(String name) {
         return GameRuleRegistry.register(
