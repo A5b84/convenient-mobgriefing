@@ -10,6 +10,7 @@ public class Mod implements ModInitializer {
 
     public static final GameRules.Key<BooleanRule>
             LENIENT_GRIEFING = register("lenientGriefing"),
+            ENDERMAN_GRIEFING = register("endermanGriefing"),
             WITHER_GRIEFING = register("witherGriefing"),
             DRAGON_GRIEFING = register("dragonGriefing");
 

@@ -9,6 +9,8 @@ import net.minecraft.entity.ai.goal.EatGrassGoal;
 import net.minecraft.entity.ai.goal.StepAndDestroyBlockGoal;
 import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
+import net.minecraft.entity.mob.EndermanEntity.PlaceBlockGoal;
+import net.minecraft.entity.mob.EndermanEntity.PickUpBlockGoal;
 import net.minecraft.entity.mob.EvokerEntity.WololoGoal;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PiglinEntity;
@@ -22,6 +24,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import static io.github.a5b84.convenientmobgriefing.Mod.DRAGON_GRIEFING;
+import static io.github.a5b84.convenientmobgriefing.Mod.ENDERMAN_GRIEFING;
 import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 import static io.github.a5b84.convenientmobgriefing.Mod.WITHER_GRIEFING;
 
@@ -147,6 +150,30 @@ public final class RulesImpl {
             }
         }
 
+    }
+
+
+
+    /** endermanGriefing implementation */
+    public static final class Enderman {
+
+        private Enderman() {}
+
+        @Mixin(PlaceBlockGoal.class)
+        public static abstract class PlaceBlockGoalMixin {
+            @ModifyArg(method = "canStart", at = @At(value = "INVOKE", target = TARGET))
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
+                return ENDERMAN_GRIEFING;
+            }
+        }
+
+        @Mixin(PickUpBlockGoal.class)
+        public static abstract class PickUpBlockGoalMixin {
+            @ModifyArg(method = "canStart", at = @At(value = "INVOKE", target = TARGET))
+            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
+                return ENDERMAN_GRIEFING;
+            }
+        }
     }
 
 

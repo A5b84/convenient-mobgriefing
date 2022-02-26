@@ -14,6 +14,8 @@
     "RulesImpl$Lenient$PiglinEntityMixin",
     "RulesImpl$Lenient$EatSweetBerriesGoalMixin",
     "RulesImpl$Lenient$LivingEntityMixin",
+    "RulesImpl$Enderman$PlaceBlockGoalMixin",
+    "RulesImpl$Enderman$PickUpBlockGoalMixin",
     "RulesImpl$Wither$WitherEntityMixin",
     "RulesImpl$Wither$WitherSkullEntityMixin",
     "RulesImpl$Dragon$EnderDragonEntityMixin"

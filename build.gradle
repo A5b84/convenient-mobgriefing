@@ -51,6 +51,10 @@ jar {
 	}
 }
 
+loom {
+	accessWidener = file("src/main/resources/convenient-mobgriefing.accesswidener")
+}
+
 // configure the maven publication
 // publishing {
 // 	publications {
