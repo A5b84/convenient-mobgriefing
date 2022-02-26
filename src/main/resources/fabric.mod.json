@@ -17,13 +17,9 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "io.github.a5b84.convenientmobgriefing.Mod"
-    ]
+    "main": ["io.github.a5b84.convenientmobgriefing.Mod"]
   },
-  "mixins": [
-    "convenient-mobgriefing.mixins.json"
-  ],
+  "mixins": ["convenient-mobgriefing.mixins.json"],
 
   "depends": {
     "fabric-game-rule-api-v1": "*"
