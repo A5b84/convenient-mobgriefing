@@ -1,6 +1,5 @@
 package io.github.a5b84.convenientmobgriefing.mixin;
 
-import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.FarmlandBlock;
 import net.minecraft.block.TurtleEggBlock;
 import net.minecraft.entity.LivingEntity;
