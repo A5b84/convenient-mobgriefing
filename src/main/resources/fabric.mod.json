@@ -22,6 +22,7 @@
   "mixins": ["convenient-mobgriefing.mixins.json"],
 
   "depends": {
+    "fabricloader": ">=0.14.8",
     "fabric-game-rule-api-v1": "*"
   }
 }

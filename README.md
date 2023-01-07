@@ -6,7 +6,7 @@ A [Fabric](https://fabricmc.net) mod that gives more control over the `mobGriefi
 - `witherGriefing` for the Wither
 - `dragonGriefing` for the Ender Dragon
 
-Requires [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api). New gamerules are enabled by default.
+Requires Fabric API ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/fabric-api) / [Modrinth](https://modrinth.com/mod/fabric-api)). New game rules are enabled by default.
 
 A changelog is available [here](CHANGELOG.md).
 
@@ -33,6 +33,6 @@ A changelog is available [here](CHANGELOG.md).
   - litting campfires
 - Evokers wololo-ing Sheeps
 
-`witherGriefing` allows the Wither to destroy stuff.
+`witherGriefing` allows the Wither to destroy blocks, and `dragonGriefing` allows the Ender Dragon to destroy blocks.
 
-`dragonGriefing` allows the Ender Dragon to stuff.
+Links: [CurseForge](https://www.curseforge.com/minecraft/mc-mods/convenient-mobgriefing) · [GitHub](https://github.com/A5b84/convenient-mobgriefing) · [Modrinth](https://modrinth.com/mod/convenient-mobgriefing)
