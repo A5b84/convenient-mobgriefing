@@ -4,7 +4,7 @@
   "package": "io.github.a5b84.convenientmobgriefing.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "RulesImpl$Lenient$CampfireBlockMixin",
+    "RulesImpl$Lenient$AllayPickupMixin",
     "RulesImpl$Lenient$FarmlandBlockMixin",
     "RulesImpl$Lenient$TurtleEggBlockMixin",
     "RulesImpl$Lenient$FarmerVillagerTaskMixin",
@@ -12,7 +12,7 @@
     "RulesImpl$Lenient$GoalsMixin",
     "RulesImpl$Lenient$EntityMovementMixin",
     "RulesImpl$Lenient$PiglinEntityMixin",
-    "RulesImpl$Lenient$EatSweetBerriesGoalMixin",
+    "RulesImpl$Lenient$EatBerriesGoalMixin",
     "RulesImpl$Lenient$LivingEntityMixin",
     "RulesImpl$Wither$WitherEntityMixin",
     "RulesImpl$Wither$WitherSkullEntityMixin",
