@@ -4,6 +4,7 @@
   "package": "io.github.a5b84.convenientmobgriefing.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+		"RulesImpl$Lenient$AllayPickupMixin",
     "RulesImpl$Lenient$CampfireBlockMixin",
     "RulesImpl$Lenient$FarmlandBlockMixin",
     "RulesImpl$Lenient$TurtleEggBlockMixin",

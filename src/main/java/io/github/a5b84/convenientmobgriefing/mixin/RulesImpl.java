@@ -12,6 +12,7 @@ import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.mob.EvokerEntity.WololoGoal;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PiglinEntity;
+import net.minecraft.entity.passive.AllayEntity;
 import net.minecraft.entity.passive.FoxEntity.EatSweetBerriesGoal;
 import net.minecraft.entity.passive.SnowGolemEntity;
 import net.minecraft.entity.projectile.WitherSkullEntity;
@@ -37,7 +38,15 @@ public final class RulesImpl {
     /** lenientGriefing implementation */
     public static final class Lenient {
 
-        private Lenient() {}
+		/** Allay picking up items (1.19.1+) */
+		@Mixin(AllayEntity.class)
+		public static abstract class AllayPickupMixin {
+			@SuppressWarnings("UnresolvedMixinReference")
+			@ModifyArg(method = "canGather", at = @At(value = "INVOKE", target = TARGET), require = 0)
+			private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
+				return LENIENT_GRIEFING;
+			}
+		}
 
         /** Projectiles litting campfires */
         @Mixin(CampfireBlock.class)
