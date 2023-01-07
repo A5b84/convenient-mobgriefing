@@ -1,6 +1,5 @@
 package io.github.a5b84.convenientmobgriefing.mixin;
 
-import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.FarmlandBlock;
 import net.minecraft.block.TurtleEggBlock;
 import net.minecraft.entity.LivingEntity;
@@ -38,7 +37,7 @@ public final class RulesImpl {
     /** lenientGriefing implementation */
     public static final class Lenient {
 
-		/** Allay picking up items (1.19.1+) */
+		/** Allay picking up items (1.19+) */
 		@Mixin(AllayEntity.class)
 		public static abstract class AllayPickupMixin {
 			@SuppressWarnings("UnresolvedMixinReference")
@@ -48,30 +47,11 @@ public final class RulesImpl {
 			}
 		}
 
-        /** Projectiles litting campfires */
-        @Mixin(CampfireBlock.class)
-        public static abstract class CampfireBlockMixin {
-            // `require = 0` because it was added somewhere in 1.15 and later
-            // removed (during the 1.17 snapshots?)
-            @SuppressWarnings("UnresolvedMixinReference")
-            @ModifyArg(method = "onProjectileHit", at = @At(value = "INVOKE", target = TARGET), require = 0)
-            private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
-                return LENIENT_GRIEFING;
-            }
-        }
-
         /** Farmland trampling */
         @Mixin(FarmlandBlock.class)
         public static abstract class FarmlandBlockMixin {
             @ModifyArg(method = "onLandedUpon", at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
-                return LENIENT_GRIEFING;
-            }
-
-            // <= 1.16.5 (?)
-            @SuppressWarnings("UnresolvedMixinReference")
-            @ModifyArg(method = "method_9554(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_1297;F)V", remap = false, at = @At(value = "INVOKE", target = TARGET), require = 0)
-            private Key<BooleanRule> mobGriefingProxy_pre1_17(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
         }
@@ -147,13 +127,6 @@ public final class RulesImpl {
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
                 return LENIENT_GRIEFING;
             }
-
-            /** Pre 19w45a */
-            @SuppressWarnings("UnresolvedMixinReference")
-            @ModifyArg(method = "onDeath", at = @At(value = "INVOKE", target = TARGET), require = 0)
-            private Key<BooleanRule> mobGriefingProxy_pre19w45a(Key<BooleanRule> old) {
-                return LENIENT_GRIEFING;
-            }
         }
 
     }
@@ -179,14 +152,6 @@ public final class RulesImpl {
         public static abstract class WitherSkullEntityMixin {
             @ModifyArg(method = "onCollision", at = @At(value = "INVOKE", target = TARGET), require = 0)
             private Key<BooleanRule> mobGriefingProxy(Key<BooleanRule> old) {
-                return WITHER_GRIEFING;
-            }
-
-            /** Pre 20w13a */
-            @SuppressWarnings("UnresolvedMixinReference")
-            @ModifyArg(method = "method_7488", remap = false,
-                at = @At(value = "INVOKE", target = TARGET), require = 0)
-            private Key<BooleanRule> mobGriefingProxy_pre20w13a(Key<BooleanRule> old) {
                 return WITHER_GRIEFING;
             }
         }
