@@ -6,15 +6,15 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-import static io.github.a5b84.convenientmobgriefing.Mod.explosionRuleOverride;
+import static io.github.a5b84.convenientmobgriefing.Mod.createExplosionRuleOverride;
 
 @Mixin(World.class)
 public abstract class WorldMixin {
 
     @ModifyArg(method = "createExplosion(Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/world/explosion/ExplosionBehavior;DDDFZLnet/minecraft/world/World$ExplosionSourceType;Z)Lnet/minecraft/world/explosion/Explosion;", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
     private GameRules.Key<GameRules.BooleanRule> mobGriefingProxy(GameRules.Key<GameRules.BooleanRule> old) {
-        return explosionRuleOverride != null
-                ? explosionRuleOverride
+        return createExplosionRuleOverride != null
+                ? createExplosionRuleOverride
                 : old;
     }
 

@@ -2,13 +2,21 @@
 
 - [Compatibility table](#compatibility-table)
 
-
+### [2.1.0]
+- Added support for:
+  - Allays picking up items ([#10](https://github.com/A5b84/convenient-mobgriefing/pull/10), [#11](https://github.com/A5b84/convenient-mobgriefing/issues/11), [#13](https://github.com/A5b84/convenient-mobgriefing/pull/13)) 
+  - non-player entities melting Powder Snow when on fire
+  - projectiles from non-player entities:
+    - breaking Chorus Flowers
+    - breaking Pointed Dripstone (Tridents)
+    - litting Campfires (when on fire)
+    - lowering Cauldron water level (when on fire)
 
 ### [2.0.2]
-- Slightly better compatibility with some mods (e.g. MiniTweaks, [#6])
+- Slightly better compatibility with some mods (e.g. MiniTweaks, [#6](https://github.com/A5b84/convenient-mobgriefing/issues/6))
 
 ### [2.0.1]
-- Fixed a crash on startup in 1.17 ([#5])
+- Fixed a crash on startup in 1.17 ([#5](https://github.com/A5b84/convenient-mobgriefing/issues/5))
 
 ### [2.0.0]
 - Renamed the game rules to sound more natural:
@@ -21,7 +29,7 @@
 
 ### [1.1.4]
 - New icon
-- Fixed an incompatibility with some mods ([#3])
+- Fixed an incompatibility with some mods ([#3](https://github.com/A5b84/convenient-mobgriefing/issues/3))
 
 ### [1.1.3]
 - Lowered mixin priority, fixes potential incompatibility issues
@@ -44,12 +52,13 @@
 
 
 ### Compatibility table
-| Version     | 1.14-20w16a | 20w17a-20w21a | 20w22a-1.16.5 | 1.17+ |
-|------------:|:-----------:|:-------------:|:-------------:|:-----:|
-| 1.0.0       | X
-| 1.1.0-1.1.1 | X           | X
-| 1.1.2-2.0.0 | X           | X             | X
-| 2.0.1+      | X           | X             | X             | X
+|     Version | 1.14-20w16a | 20w17a-20w21a | 20w22a-1.16.5 | 1.17-1.19.2 | 1.19.3+ |
+|------------:|:-----------:|:-------------:|:-------------:|:-----------:|:-------:|
+|       1.0.0 |      X      |               |               |             |         |
+| 1.1.0-1.1.1 |      X      |       X       |               |             |         |
+| 1.1.2-2.0.0 |      X      |       X       |       X       |             |         |
+| 2.0.1-2.0.2 |      X      |       X       |       X       |      X      |         |
+|      2.1.0+ |             |               |               |             |    X    |
 
 
 
@@ -62,7 +71,4 @@
 [2.0.0]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.0.0
 [2.0.1]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.0.1
 [2.0.2]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.0.2
-
-[#3]: https://github.com/A5b84/convenient-mobgriefing/issues/3
-[#5]: https://github.com/A5b84/convenient-mobgriefing/issues/5
-[#6]: https://github.com/A5b84/convenient-mobgriefing/issues/6
+[2.1.0]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.0

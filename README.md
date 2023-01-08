@@ -15,10 +15,13 @@ A changelog is available [here](CHANGELOG.md).
 - Endermen taking and placing blocks
 - Silverfish infesting blocks
 - Ravagers destroying crops and leaves
+- Zombies and Vindicators breaking doors
+- non-player entities litting TNT with burning projectiles
 
 `lenientGriefing` controls:
 - Villagers harvesting crops
 - Piglin bartering
+- Allays picking up items
 - Sheeps eating grass
 - Snow Golems placing snow
 - Rabbits eating carrot crops
@@ -26,10 +29,16 @@ A changelog is available [here](CHANGELOG.md).
 - non-player entities:
   - picking up dropped items
   - turning farmland into dirt
+  - melting Powder Snow when on fire
   - placing wither roses when killed by a Wither
     - Wither Roses are dropped as items when this rule is disabled (vanilla behavior)
   - breaking turtle eggs
     - This also includes Zombies and Zombified Piglins pathfinding towards them
+- projectiles from non-player entities:
+  - breaking Chorus Flowers
+  - breaking Pointed Dripstone (Tridents)
+  - litting Campfires (when on fire)
+  - lowering Cauldron water level (when on fire)
 - Evokers wololo-ing Sheeps
 
 `witherGriefing` allows the Wither to destroy blocks, and `dragonGriefing` allows the Ender Dragon to destroy blocks.

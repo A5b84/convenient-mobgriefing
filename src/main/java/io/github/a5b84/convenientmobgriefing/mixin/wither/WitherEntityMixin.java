@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import static io.github.a5b84.convenientmobgriefing.Mod.WITHER_GRIEFING;
-import static io.github.a5b84.convenientmobgriefing.Mod.explosionRuleOverride;
+import static io.github.a5b84.convenientmobgriefing.Mod.createExplosionRuleOverride;
 
 @Mixin(WitherEntity.class)
 public abstract class WitherEntityMixin {
@@ -25,12 +25,12 @@ public abstract class WitherEntityMixin {
     /** Initial explosion */
     @Inject(method = "mobTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"))
     private void enableMobGriefingOverride(CallbackInfo ci) {
-        explosionRuleOverride = WITHER_GRIEFING;
+        createExplosionRuleOverride = WITHER_GRIEFING;
     }
 
     @Inject(method = "mobTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;", shift = At.Shift.AFTER))
     private void disableMobGriefingOverride(CallbackInfo ci) {
-        explosionRuleOverride = null;
+        createExplosionRuleOverride = null;
     }
 
 }

@@ -3,6 +3,7 @@ package io.github.a5b84.convenientmobgriefing;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.GameRules.BooleanRule;
 import net.minecraft.world.World;
@@ -18,7 +19,13 @@ public class Mod implements ModInitializer {
      * Rule used to replace {@link GameRules#DO_MOB_GRIEFING} in calls to
      * {@link World#createExplosion}, or {@code null} to do nothing
      */
-    public static GameRules.Key<BooleanRule> explosionRuleOverride;
+    public static GameRules.Key<BooleanRule> createExplosionRuleOverride;
+
+    /**
+     * Rule used to replace {@link GameRules#DO_MOB_GRIEFING} in calls to
+     * {@link ProjectileEntity#canModifyAt}, or {@code null} to do nothing
+     */
+    public static GameRules.Key<BooleanRule> canProjectileModifyAtRuleOverride;
 
     private static GameRules.Key<BooleanRule> register(String name) {
         return GameRuleRegistry.register(
@@ -28,6 +35,8 @@ public class Mod implements ModInitializer {
     }
 
     @Override
-    public void onInitialize() {}
+    public void onInitialize() {
+        // Everything is done in the static initializer
+    }
 
 }
