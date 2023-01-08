@@ -20,7 +20,7 @@ A changelog is available [here](CHANGELOG.md).
 - Villagers harvesting crops
 - Piglin bartering
 - Sheeps eating grass
-- Snow Golem placing snow
+- Snow Golems placing snow
 - Rabbits eating carrot crops
 - Foxes eating Sweet Berries
 - non-player entities:
@@ -30,7 +30,6 @@ A changelog is available [here](CHANGELOG.md).
     - Wither Roses are dropped as items when this rule is disabled (vanilla behavior)
   - breaking turtle eggs
     - This also includes Zombies and Zombified Piglins pathfinding towards them
-  - litting campfires
 - Evokers wololo-ing Sheeps
 
 `witherGriefing` allows the Wither to destroy blocks, and `dragonGriefing` allows the Ender Dragon to destroy blocks.

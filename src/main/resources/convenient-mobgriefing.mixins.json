@@ -1,25 +1,26 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "io.github.a5b84.convenientmobgriefing.mixin",
-  "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "RulesImpl$Lenient$AllayPickupMixin",
-    "RulesImpl$Lenient$FarmlandBlockMixin",
-    "RulesImpl$Lenient$TurtleEggBlockMixin",
-    "RulesImpl$Lenient$FarmerVillagerTaskMixin",
-    "RulesImpl$Lenient$EatGrassGoalMixin",
-    "RulesImpl$Lenient$GoalsMixin",
-    "RulesImpl$Lenient$EntityMovementMixin",
-    "RulesImpl$Lenient$PiglinEntityMixin",
-    "RulesImpl$Lenient$EatBerriesGoalMixin",
-    "RulesImpl$Lenient$LivingEntityMixin",
-    "RulesImpl$Wither$WitherEntityMixin",
-    "RulesImpl$Wither$WitherSkullEntityMixin",
-    "RulesImpl$Dragon$EnderDragonEntityMixin"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  },
-  "mixinPriority": 1623
+    "required": true,
+    "minVersion": "0.8",
+    "package": "io.github.a5b84.convenientmobgriefing.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "mixins": [
+        "WorldMixin",
+        "dragon.EnderDragonEntityMixin",
+        "lenient.AllayPickupMixin",
+        "lenient.EatBerriesGoalMixin",
+        "lenient.EatGrassGoalMixin",
+        "lenient.EntityMovementMixin",
+        "lenient.FarmerVillagerTaskMixin",
+        "lenient.FarmlandBlockMixin",
+        "lenient.GoalsMixin",
+        "lenient.LivingEntityMixin",
+        "lenient.PiglinEntityMixin",
+        "lenient.TurtleEggBlockMixin",
+        "wither.WitherEntityMixin",
+        "wither.WitherSkullEntityMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "mixinPriority": 1623
 }
