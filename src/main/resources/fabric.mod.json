@@ -1,29 +1,31 @@
 {
-  "schemaVersion": 1,
-  "id": "convenient-mobgriefing",
-  "version": "${version}",
-
-  "name": "Convenient mobGriefing",
-  "description": "Gives more control over the mobGriefing game rule by splitting it into four.",
-  "authors": ["Neecko5b84"],
-  "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/convenient-mobgriefing",
-    "issues": "https://github.com/A5b84/convenient-mobgriefing/issues",
-    "sources": "https://github.com/A5b84/convenient-mobgriefing"
-  },
-
-  "license": "LGPL-3.0-or-later",
-  "icon": "assets/convenient-mobgriefing/icon.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": ["io.github.a5b84.convenientmobgriefing.Mod"]
-  },
-  "mixins": ["convenient-mobgriefing.mixins.json"],
-
-  "depends": {
-    "minecraft": ">=1.19.3-",
-    "fabricloader": ">=0.14.8",
-    "fabric-game-rule-api-v1": "*"
-  }
+	"schemaVersion": 1,
+	"id": "convenient-mobgriefing",
+	"version": "${version}",
+	"name": "Convenient mobGriefing",
+	"description": "Gives more control over the mobGriefing game rule by splitting it into four.",
+	"authors": [
+		"Neecko5b84"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/convenient-mobgriefing",
+		"issues": "https://github.com/A5b84/convenient-mobgriefing/issues",
+		"sources": "https://github.com/A5b84/convenient-mobgriefing"
+	},
+	"license": "LGPL-3.0-or-later",
+	"icon": "assets/convenient-mobgriefing/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+            "io.github.a5b84.convenientmobgriefing.Mod"
+		]
+	},
+	"mixins": [
+		"convenient-mobgriefing.mixins.json"
+	],
+	"depends": {
+		"minecraft": ">=1.20.3-",
+		"fabricloader": ">=0.15.0",
+		"fabric-game-rule-api-v1": "*"
+	}
 }

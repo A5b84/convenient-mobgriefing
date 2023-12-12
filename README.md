@@ -14,16 +14,15 @@ A changelog is available [here](CHANGELOG.md).
 - Creepers and Ghasts destruction
 - Endermen taking and placing blocks
 - Silverfish infesting blocks
-- Ravagers destroying crops and leaves
 - Zombies and Vindicators breaking doors
-- non-player entities litting TNT with burning projectiles
 
 `lenientGriefing` controls:
 - Villagers harvesting crops
 - Piglin bartering
 - Allays picking up items
-- Sheeps eating grass
+- Sheep eating grass
 - Snow Golems placing snow
+- Ravagers destroying leaves
 - Rabbits eating carrot crops
 - Foxes eating Sweet Berries
 - non-player entities:
@@ -37,6 +36,7 @@ A changelog is available [here](CHANGELOG.md).
 - projectiles from non-player entities:
   - breaking Chorus Flowers
   - breaking Pointed Dripstone (Tridents)
+  - litting TNT (when on fire)
   - litting Campfires (when on fire)
   - lowering Cauldron water level (when on fire)
 - Evokers wololo-ing Sheeps

@@ -1,6 +1,9 @@
 # Changelog
 
-- [Compatibility table](#compatibility-table)
+### [2.1.1]
+- Update to 1.20.4
+- Move Ravagers breaking leaves from `mobGriefing` to `lenientMobGriefing` ([#14](https://github.com/A5b84/convenient-mobgriefing/issues/14))
+- Move projectiles on fire litting TNT from `mobGriefing` to `lenientMobGriefing`
 
 ### [2.1.0]
 - Added support for:
@@ -51,15 +54,19 @@
 
 
 
-### Compatibility table
-|     Version | 1.14-20w16a | 20w17a-20w21a | 20w22a-1.16.5 | 1.17-1.19.2 | 1.19.3+ |
-|------------:|:-----------:|:-------------:|:-------------:|:-----------:|:-------:|
-|       1.0.0 |      X      |               |               |             |         |
-| 1.1.0-1.1.1 |      X      |       X       |               |             |         |
-| 1.1.2-2.0.0 |      X      |       X       |       X       |             |         |
-| 2.0.1-2.0.2 |      X      |       X       |       X       |      X      |         |
-|      2.1.0+ |             |               |               |             |    X    |
+### Minecraft compatibility by mod version
+Old versions:
 
+|     Version | 1.14-20w16a | 20w17a-20w21a | 20w22a-1.16.5 | 1.17-1.19.2 |
+|------------:|:-----------:|:-------------:|:-------------:|:-----------:|
+|       1.0.0 |      X      |               |               |             |
+| 1.1.0-1.1.1 |      X      |       X       |               |             |
+| 1.1.2-2.0.0 |      X      |       X       |       X       |             |
+| 2.0.1-2.0.2 |      X      |       X       |       X       |      X      |
+
+Newer versions:
+- 2.1.0: 1.19.3-1.20.2
+- 2.1.1: 1.20.3-1.20.4+
 
 
 [1.0.0]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v1.0.0
@@ -72,3 +79,4 @@
 [2.0.1]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.0.1
 [2.0.2]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.0.2
 [2.1.0]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.0
+[2.1.1]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.1
