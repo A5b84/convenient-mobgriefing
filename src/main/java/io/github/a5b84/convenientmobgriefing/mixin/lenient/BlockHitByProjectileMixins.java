@@ -16,7 +16,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRul
 /**
  * Blocks reacting to being hit by projectiles through {@link Block#onProjectileHit}
  */
-@SuppressWarnings("deprecation") // Block#onProjectileHit
+@SuppressWarnings("JavadocReference")
 @Mixin({CampfireBlock.class, ChorusFlowerBlock.class, PointedDripstoneBlock.class, TntBlock.class})
 public class BlockHitByProjectileMixins {
 

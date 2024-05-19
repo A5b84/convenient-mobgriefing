@@ -1,9 +1,14 @@
 # Changelog
 
+### [2.1.2]
+- Update to 1.20.6
+- Moved Ravagers breaking Pitcher Pods from `mobGriefing` to `lenientGriefing`
+- Moved the Weaving effect from `mobGriefing` to `lenientGriefing`
+
 ### [2.1.1]
 - Update to 1.20.4
-- Move Ravagers breaking leaves from `mobGriefing` to `lenientMobGriefing` ([#14](https://github.com/A5b84/convenient-mobgriefing/issues/14))
-- Move projectiles on fire litting TNT from `mobGriefing` to `lenientMobGriefing`
+- Move Ravagers breaking leaves from `mobGriefing` to `lenientGriefing` ([#14](https://github.com/A5b84/convenient-mobgriefing/issues/14))
+- Move projectiles on fire litting TNT from `mobGriefing` to `lenientGriefing`
 
 ### [2.1.0]
 - Added support for:
@@ -80,3 +85,4 @@ Newer versions:
 [2.0.2]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.0.2
 [2.1.0]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.0
 [2.1.1]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.1
+[2.1.2]: https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.2

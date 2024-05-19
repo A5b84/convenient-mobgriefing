@@ -23,6 +23,7 @@ A changelog is available [here](CHANGELOG.md).
 - Sheep eating grass
 - Snow Golems placing snow
 - Ravagers destroying leaves
+- the Weaving status effect placing cobwebs
 - Rabbits eating carrot crops
 - Foxes eating Sweet Berries
 - non-player entities:

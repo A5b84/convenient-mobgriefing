@@ -20,7 +20,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRul
  * Note: the affected methods don't check for {@link GameRules#DO_MOB_GRIEFING}
  * themselves (only {@link Entity#canModifyAt}) so this only affects projectiles
  */
-@SuppressWarnings("deprecation") // Block#onEntityCollision
+@SuppressWarnings("JavadocReference")
 @Mixin({LeveledCauldronBlock.class, PowderSnowBlock.class})
 public class BlockCollidingWithEntityMixins {
 
