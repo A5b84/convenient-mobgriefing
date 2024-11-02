@@ -23,12 +23,12 @@ public abstract class WitherEntityMixin {
 
 
     /** Initial explosion */
-    @Inject(method = "mobTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"))
+    @Inject(method = "mobTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)V"))
     private void enableMobGriefingOverride(CallbackInfo ci) {
         createExplosionRuleOverride = WITHER_GRIEFING;
     }
 
-    @Inject(method = "mobTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;", shift = At.Shift.AFTER))
+    @Inject(method = "mobTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/world/ServerWorld;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)V", shift = At.Shift.AFTER))
     private void disableMobGriefingOverride(CallbackInfo ci) {
         createExplosionRuleOverride = null;
     }

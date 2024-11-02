@@ -24,12 +24,12 @@ import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRul
 @Mixin({LeveledCauldronBlock.class, PowderSnowBlock.class})
 public class BlockCollidingWithEntityMixins {
 
-    @Inject(method = "onEntityCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z"))
+    @Inject(method = "onEntityCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z"))
     private void enableMobGriefingOverride(CallbackInfo ci) {
         canProjectileModifyAtRuleOverride = LENIENT_GRIEFING;
     }
 
-    @Inject(method = "onEntityCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z", shift = At.Shift.AFTER))
+    @Inject(method = "onEntityCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z", shift = At.Shift.AFTER))
     private void disableMobGriefingOverride(CallbackInfo ci) {
         canProjectileModifyAtRuleOverride = null;
     }

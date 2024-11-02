@@ -4,7 +4,7 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ProjectileEntityMixin",
-		"WorldMixin",
+		"ServerWorldMixin",
 		"dragon.EnderDragonEntityMixin",
 		"lenient.AllayPickupMixin",
 		"lenient.BlockCollidingWithEntityMixins",

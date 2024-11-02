@@ -20,12 +20,12 @@ import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRul
 @Mixin({CampfireBlock.class, ChorusFlowerBlock.class, PointedDripstoneBlock.class, TntBlock.class})
 public class BlockHitByProjectileMixins {
 
-    @Inject(method = "onProjectileHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/ProjectileEntity;canModifyAt(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z"))
+    @Inject(method = "onProjectileHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/ProjectileEntity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z"))
     private void enableMobGriefingOverride(CallbackInfo ci) {
         canProjectileModifyAtRuleOverride = LENIENT_GRIEFING;
     }
 
-    @Inject(method = "onProjectileHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/ProjectileEntity;canModifyAt(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z", shift = At.Shift.AFTER))
+    @Inject(method = "onProjectileHit", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/ProjectileEntity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z", shift = At.Shift.AFTER))
     private void disableMobGriefingOverride(CallbackInfo ci) {
         canProjectileModifyAtRuleOverride = null;
     }

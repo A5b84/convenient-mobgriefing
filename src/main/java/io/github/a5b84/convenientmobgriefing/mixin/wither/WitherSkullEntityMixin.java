@@ -15,12 +15,12 @@ import static io.github.a5b84.convenientmobgriefing.Mod.createExplosionRuleOverr
 @Mixin(WitherSkullEntity.class)
 public abstract class WitherSkullEntityMixin {
 
-    @Inject(method = "onCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"))
+    @Inject(method = "onCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)V"))
     private void enableMobGriefingOverride(CallbackInfo ci) {
         createExplosionRuleOverride = WITHER_GRIEFING;
     }
 
-    @Inject(method = "onCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;", shift = At.Shift.AFTER))
+    @Inject(method = "onCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/World$ExplosionSourceType;)V", shift = At.Shift.AFTER))
     private void disableMobGriefingOverride(CallbackInfo ci) {
         createExplosionRuleOverride = null;
     }
