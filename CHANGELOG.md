@@ -1,5 +1,8 @@
 # Changelog
 
+### [2.1.4]
+- Update to 1.21.5
+
 ### [2.1.3]
 - Updated to 1.21.2
 

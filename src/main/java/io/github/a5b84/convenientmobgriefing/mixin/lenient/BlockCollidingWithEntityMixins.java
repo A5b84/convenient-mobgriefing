@@ -21,7 +21,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRul
  * themselves (only {@link Entity#canModifyAt}) so this only affects projectiles
  */
 @SuppressWarnings("JavadocReference")
-@Mixin({LeveledCauldronBlock.class, PowderSnowBlock.class})
+@Mixin(LeveledCauldronBlock.class)
 public class BlockCollidingWithEntityMixins {
 
     @Inject(method = "onEntityCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z"))
