@@ -1,9 +1,7 @@
 package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 
 
-import net.minecraft.block.Block;
 import net.minecraft.block.LeveledCauldronBlock;
-import net.minecraft.block.PowderSnowBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
@@ -15,21 +13,20 @@ import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRuleOverride;
 
 /**
- * Blocks reacting to being hit by projectiles through {@link Block#onEntityCollision}
+ * Cauldrons reacting to being hit by projectiles
  * <p>
  * Note: the affected methods don't check for {@link GameRules#DO_MOB_GRIEFING}
  * themselves (only {@link Entity#canModifyAt}) so this only affects projectiles
  */
-@SuppressWarnings("JavadocReference")
 @Mixin(LeveledCauldronBlock.class)
-public class BlockCollidingWithEntityMixins {
+public class LeveledCauldronBlockMixin {
 
-    @Inject(method = "onEntityCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z"))
+    @Inject(method = "method_71627", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z"))
     private void enableMobGriefingOverride(CallbackInfo ci) {
         canProjectileModifyAtRuleOverride = LENIENT_GRIEFING;
     }
 
-    @Inject(method = "onEntityCollision", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z", shift = At.Shift.AFTER))
+    @Inject(method = "method_71627", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z", shift = At.Shift.AFTER))
     private void disableMobGriefingOverride(CallbackInfo ci) {
         canProjectileModifyAtRuleOverride = null;
     }
