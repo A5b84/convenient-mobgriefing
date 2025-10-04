@@ -1,5 +1,8 @@
 # Changelog
 
+### [2.1.7](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.7)
+- Update to 1.21.10
+
 ### [2.1.6](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.6)
 - Update to 1.21.9
 
