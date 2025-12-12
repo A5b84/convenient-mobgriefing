@@ -1,36 +1,37 @@
 package io.github.a5b84.convenientmobgriefing;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.world.GameRules;
-import net.minecraft.world.GameRules.BooleanRule;
 import net.minecraft.world.World;
+import net.minecraft.world.rule.GameRule;
+import net.minecraft.world.rule.GameRuleCategory;
+import net.minecraft.world.rule.GameRules;
 
 public class Mod implements ModInitializer {
 
-    public static final GameRules.Key<BooleanRule>
+    public static final GameRule<Boolean>
             LENIENT_GRIEFING = register("lenientGriefing"),
             WITHER_GRIEFING = register("witherGriefing"),
             DRAGON_GRIEFING = register("dragonGriefing");
 
     /**
-     * Rule used to replace {@link GameRules#DO_MOB_GRIEFING} in calls to
+     * Rule used to replace {@link GameRules#MOB_GRIEFING} in calls to
      * {@link World#createExplosion}, or {@code null} to do nothing
      */
-    public static GameRules.Key<BooleanRule> createExplosionRuleOverride;
+    public static GameRule<Boolean> createExplosionRuleOverride;
 
     /**
-     * Rule used to replace {@link GameRules#DO_MOB_GRIEFING} in calls to
+     * Rule used to replace {@link GameRules#MOB_GRIEFING} in calls to
      * {@link ProjectileEntity#canModifyAt}, or {@code null} to do nothing
      */
-    public static GameRules.Key<BooleanRule> canProjectileModifyAtRuleOverride;
+    public static GameRule<Boolean> canProjectileModifyAtRuleOverride;
 
-    private static GameRules.Key<BooleanRule> register(String name) {
-        return GameRuleRegistry.register(
-                name, GameRules.Category.MOBS,
-                GameRuleFactory.createBooleanRule(true)
+    private static GameRule<Boolean> register(String name) {
+        // Access widener makes this private method accessible
+        return GameRules.registerBooleanRule(
+                "convenient-mobgriefing:" + name,
+                GameRuleCategory.MOBS,
+                true
         );
     }
 

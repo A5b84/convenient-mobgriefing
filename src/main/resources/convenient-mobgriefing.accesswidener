@@ -1,0 +1,3 @@
+accessWidener v2 named
+
+accessible method net/minecraft/world/rule/GameRules registerBooleanRule (Ljava/lang/String;Lnet/minecraft/world/rule/GameRuleCategory;Z)Lnet/minecraft/world/rule/GameRule;

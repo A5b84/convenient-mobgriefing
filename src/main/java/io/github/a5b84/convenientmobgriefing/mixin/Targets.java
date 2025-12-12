@@ -1,6 +1,7 @@
 package io.github.a5b84.convenientmobgriefing.mixin;
 
-import net.minecraft.world.GameRules;
+import net.minecraft.world.rule.GameRule;
+import net.minecraft.world.rule.GameRules;
 
 public class Targets {
     // Can be referenced from mixins because constants are inlined at compilation
