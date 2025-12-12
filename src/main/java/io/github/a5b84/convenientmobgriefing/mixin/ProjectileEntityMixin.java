@@ -12,7 +12,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRul
 @Mixin(ProjectileEntity.class)
 public abstract class ProjectileEntityMixin {
 
-    @ModifyArg(method = "canModifyAt", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = "canModifyAt", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return canProjectileModifyAtRuleOverride != null
                 ? canProjectileModifyAtRuleOverride

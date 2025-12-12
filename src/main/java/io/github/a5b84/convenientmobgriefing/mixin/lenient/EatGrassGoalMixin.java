@@ -16,7 +16,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 @Mixin(EatGrassGoal.class)
 public abstract class EatGrassGoalMixin {
 
-    @ModifyArg(method = "tick", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = "tick", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return LENIENT_GRIEFING;
     }

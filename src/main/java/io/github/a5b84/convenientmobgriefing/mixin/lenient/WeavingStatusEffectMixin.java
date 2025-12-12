@@ -15,7 +15,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 @Mixin(targets = "net.minecraft.entity.effect.WeavingStatusEffect")
 public class WeavingStatusEffectMixin {
 
-    @ModifyArg(method = "onEntityRemoval", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = "onEntityRemoval", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return LENIENT_GRIEFING;
     }

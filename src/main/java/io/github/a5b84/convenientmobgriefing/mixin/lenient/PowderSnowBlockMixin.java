@@ -35,7 +35,7 @@ public abstract class PowderSnowBlockMixin {
     @SuppressWarnings("JavadocReference")
     private static final String EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME = "method_67681";
 
-    @ModifyArg(method = EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME, at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME, at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private static GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return LENIENT_GRIEFING;
     }

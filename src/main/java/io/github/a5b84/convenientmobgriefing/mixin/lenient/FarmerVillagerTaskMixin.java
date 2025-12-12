@@ -16,7 +16,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 @Mixin(FarmerVillagerTask.class)
 public abstract class FarmerVillagerTaskMixin {
 
-    @ModifyArg(method = "shouldRun(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/passive/VillagerEntity;)Z", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = "shouldRun(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/passive/VillagerEntity;)Z", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return LENIENT_GRIEFING;
     }

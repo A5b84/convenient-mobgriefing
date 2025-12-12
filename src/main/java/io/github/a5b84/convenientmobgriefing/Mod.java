@@ -10,9 +10,9 @@ import net.minecraft.world.rule.GameRules;
 public class Mod implements ModInitializer {
 
     public static final GameRule<Boolean>
-            LENIENT_GRIEFING = register("lenientGriefing"),
-            WITHER_GRIEFING = register("witherGriefing"),
-            DRAGON_GRIEFING = register("dragonGriefing");
+            LENIENT_GRIEFING = register("lenient_griefing"),
+            WITHER_GRIEFING = register("wither_griefing"),
+            DRAGON_GRIEFING = register("dragon_griefing");
 
     /**
      * Rule used to replace {@link GameRules#MOB_GRIEFING} in calls to
@@ -29,7 +29,7 @@ public class Mod implements ModInitializer {
     private static GameRule<Boolean> register(String name) {
         // Access widener makes this private method accessible
         return GameRules.registerBooleanRule(
-                "convenient-mobgriefing:" + name,
+                name,
                 GameRuleCategory.MOBS,
                 true
         );

@@ -18,7 +18,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
         targets = "net/minecraft/entity/passive/RabbitEntity$EatCarrotCropGoal")
 public abstract class GoalMixins {
 
-    @ModifyArg(method = "canStart()Z", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = "canStart()Z", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return LENIENT_GRIEFING;
     }

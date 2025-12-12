@@ -17,7 +17,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.createExplosionRuleOverr
 public abstract class WitherEntityMixin {
 
     /** Wither destroying blocks when hurt */
-    @ModifyArg(method = "mobTick", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = "mobTick", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return WITHER_GRIEFING;
     }

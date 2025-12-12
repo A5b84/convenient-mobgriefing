@@ -12,7 +12,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.createExplosionRuleOverr
 @Mixin(ServerWorld.class)
 public abstract class ServerWorldMixin {
 
-    @ModifyArg(method = "createExplosion", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = "createExplosion", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return createExplosionRuleOverride != null
                 ? createExplosionRuleOverride

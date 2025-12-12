@@ -16,7 +16,7 @@ import static io.github.a5b84.convenientmobgriefing.Mod.DRAGON_GRIEFING;
 @Mixin(EnderDragonEntity.class)
 public abstract class EnderDragonEntityMixin {
 
-    @ModifyArg(method = "destroyBlocks", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
+    @ModifyArg(method = "destroyBlocks", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
     private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
         return DRAGON_GRIEFING;
     }
