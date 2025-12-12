@@ -2,7 +2,6 @@ package io.github.a5b84.convenientmobgriefing.mixin;
 
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.rule.GameRule;
-import net.minecraft.world.rule.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;

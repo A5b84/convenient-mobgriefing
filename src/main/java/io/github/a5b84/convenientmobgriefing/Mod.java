@@ -1,7 +1,9 @@
 package io.github.a5b84.convenientmobgriefing;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleBuilder;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.minecraft.world.rule.GameRule;
 import net.minecraft.world.rule.GameRuleCategory;
@@ -27,12 +29,9 @@ public class Mod implements ModInitializer {
     public static GameRule<Boolean> canProjectileModifyAtRuleOverride;
 
     private static GameRule<Boolean> register(String name) {
-        // Access widener makes this private method accessible
-        return GameRules.registerBooleanRule(
-                name,
-                GameRuleCategory.MOBS,
-                true
-        );
+        return GameRuleBuilder.forBoolean(true)
+                .category(GameRuleCategory.MOBS)
+                .buildAndRegister(Identifier.of("convenient-mobgriefing", name));
     }
 
     @Override
