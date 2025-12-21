@@ -10,33 +10,29 @@ import net.minecraft.world.World;
 
 public class Mod implements ModInitializer {
 
-    public static final GameRules.Key<BooleanRule>
-            LENIENT_GRIEFING = register("lenientGriefing"),
-            WITHER_GRIEFING = register("witherGriefing"),
-            DRAGON_GRIEFING = register("dragonGriefing");
+  public static final GameRules.Key<BooleanRule> LENIENT_GRIEFING = register("lenientGriefing"),
+      WITHER_GRIEFING = register("witherGriefing"),
+      DRAGON_GRIEFING = register("dragonGriefing");
 
-    /**
-     * Rule used to replace {@link GameRules#DO_MOB_GRIEFING} in calls to
-     * {@link World#createExplosion}, or {@code null} to do nothing
-     */
-    public static GameRules.Key<BooleanRule> createExplosionRuleOverride;
+  /**
+   * Rule used to replace {@link GameRules#DO_MOB_GRIEFING} in calls to {@link
+   * World#createExplosion}, or {@code null} to do nothing
+   */
+  public static GameRules.Key<BooleanRule> createExplosionRuleOverride;
 
-    /**
-     * Rule used to replace {@link GameRules#DO_MOB_GRIEFING} in calls to
-     * {@link ProjectileEntity#canModifyAt}, or {@code null} to do nothing
-     */
-    public static GameRules.Key<BooleanRule> canProjectileModifyAtRuleOverride;
+  /**
+   * Rule used to replace {@link GameRules#DO_MOB_GRIEFING} in calls to {@link
+   * ProjectileEntity#canModifyAt}, or {@code null} to do nothing
+   */
+  public static GameRules.Key<BooleanRule> canProjectileModifyAtRuleOverride;
 
-    private static GameRules.Key<BooleanRule> register(String name) {
-        return GameRuleRegistry.register(
-                name, GameRules.Category.MOBS,
-                GameRuleFactory.createBooleanRule(true)
-        );
-    }
+  private static GameRules.Key<BooleanRule> register(String name) {
+    return GameRuleRegistry.register(
+        name, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
+  }
 
-    @Override
-    public void onInitialize() {
-        // Everything is done in the static initializer
-    }
-
+  @Override
+  public void onInitialize() {
+    // Everything is done in the static initializer
+  }
 }
