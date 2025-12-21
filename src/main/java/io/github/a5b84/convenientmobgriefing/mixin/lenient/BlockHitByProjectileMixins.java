@@ -24,7 +24,7 @@ public class BlockHitByProjectileMixins {
               target =
                   "Lnet/minecraft/world/entity/projectile/Projectile;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z"))
   private void enableMobGriefingOverride(CallbackInfo ci) {
-    Mod.canProjectileModifyAtRuleOverride = Mod.LENIENT_GRIEFING;
+    Mod.projectileMayInteractOverride = Mod.LENIENT_GRIEFING;
   }
 
   @Inject(
@@ -36,6 +36,6 @@ public class BlockHitByProjectileMixins {
                   "Lnet/minecraft/world/entity/projectile/Projectile;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z",
               shift = At.Shift.AFTER))
   private void disableMobGriefingOverride(CallbackInfo ci) {
-    Mod.canProjectileModifyAtRuleOverride = null;
+    Mod.projectileMayInteractOverride = null;
   }
 }

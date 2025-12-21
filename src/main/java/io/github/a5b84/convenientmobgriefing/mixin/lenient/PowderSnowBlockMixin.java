@@ -7,10 +7,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.InsideBlockEffectType;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.PowderSnowBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gamerules.GameRule;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -33,9 +33,8 @@ public abstract class PowderSnowBlockMixin {
 
   @ModifyArg(
       method = EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME,
-      at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
-  private static GameRules.Key<GameRules.BooleanValue> mobGriefingProxy(
-      GameRules.Key<GameRules.BooleanValue> old) {
+      at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
+  private static GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
     return Mod.LENIENT_GRIEFING;
   }
 
@@ -47,7 +46,7 @@ public abstract class PowderSnowBlockMixin {
               target =
                   "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z"))
   private static void enableMobGriefingOverride(CallbackInfo ci) {
-    Mod.canProjectileModifyAtRuleOverride = Mod.LENIENT_GRIEFING;
+    Mod.projectileMayInteractOverride = Mod.LENIENT_GRIEFING;
   }
 
   @Inject(
@@ -59,6 +58,6 @@ public abstract class PowderSnowBlockMixin {
                   "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z",
               shift = At.Shift.AFTER))
   private static void disableMobGriefingOverride(CallbackInfo ci) {
-    Mod.canProjectileModifyAtRuleOverride = null;
+    Mod.projectileMayInteractOverride = null;
   }
 }

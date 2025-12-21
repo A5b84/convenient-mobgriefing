@@ -3,6 +3,7 @@
 	"package": "io.github.a5b84.convenientmobgriefing.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"GameRuleRegistryFixMixin",
 		"ProjectileMixin",
 		"ServerLevelMixin",
 		"dragon.EnderDragonMixin",

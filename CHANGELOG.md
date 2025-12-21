@@ -1,16 +1,24 @@
 # Changelog
 
+### [2.1.8](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.8)
+- Updated to 1.21.11
+- Renamed the game rules to match vanilla changes:
+  - `lenientGriefing` is now `convenient_mobgriefing:lenient_griefing`
+  - `witherGriefing` is now `convenient_mobgriefing:wither_griefing`
+  - `dragonGriefing` is now `convenient_mobgriefing:dragon_griefing`
+  - Existing rule settings in 1.21.10- worlds automatically carry over when first opening the world in 1.21.11+
+
 ### [2.1.7](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.7)
-- Update to 1.21.10
+- Updated to 1.21.10
 
 ### [2.1.6](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.6)
-- Update to 1.21.9
+- Updated to 1.21.9
 
 ### [2.1.5](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.5)
-- Update to 1.21.6
+- Updated to 1.21.6
 
 ### [2.1.4](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.4)
-- Update to 1.21.5
+- Updated to 1.21.5
 
 ### [2.1.3](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.3)
 - Updated to 1.21.2
@@ -91,4 +99,6 @@ Newer versions:
 - 2.1.3: 1.21.2-1.21.4
 - 2.1.4: 1.21.5
 - 2.1.5: 1.21.6-1.21.8
-- 2.1.6: 1.21.9+
+- 2.1.6: 1.21.9
+- 2.1.7: 1.21.10
+- 2.1.8: 1.21.11+

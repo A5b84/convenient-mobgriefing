@@ -1,34 +1,42 @@
 package io.github.a5b84.convenientmobgriefing;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleBuilder;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.level.GameRules;
-import net.minecraft.world.level.GameRules.BooleanValue;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gamerules.GameRule;
+import net.minecraft.world.level.gamerules.GameRuleCategory;
+import net.minecraft.world.level.gamerules.GameRules;
 
 public class Mod implements ModInitializer {
 
-  public static final GameRules.Key<BooleanValue> LENIENT_GRIEFING = register("lenientGriefing"),
-      WITHER_GRIEFING = register("witherGriefing"),
-      DRAGON_GRIEFING = register("dragonGriefing");
+  private static final String NAMESAPCE = "convenient_mobgriefing";
+
+  public static final GameRule<Boolean> LENIENT_GRIEFING = registerRule("lenient_griefing");
+  public static final GameRule<Boolean> WITHER_GRIEFING = registerRule("wither_griefing");
+  public static final GameRule<Boolean> DRAGON_GRIEFING = registerRule("dragon_griefing");
 
   /**
-   * Rule used to replace {@link GameRules#RULE_MOBGRIEFING} in calls to {@link
-   * Level#explode}, or {@code null} to do nothing
+   * Rule to use when not {@code null} instead of {@link GameRules#MOB_GRIEFING} in calls to {@link
+   * Level#explode}
    */
-  public static GameRules.Key<BooleanValue> createExplosionRuleOverride;
+  public static GameRule<Boolean> explodeRuleOverride;
 
   /**
-   * Rule used to replace {@link GameRules#RULE_MOBGRIEFING} in calls to {@link
-   * Projectile#mayInteract}, or {@code null} to do nothing
+   * Rule to use when not {@code null} instead of {@link GameRules#MOB_GRIEFING} in calls to {@link
+   * Projectile#mayInteract}
    */
-  public static GameRules.Key<BooleanValue> canProjectileModifyAtRuleOverride;
+  public static GameRule<Boolean> projectileMayInteractOverride;
 
-  private static GameRules.Key<BooleanValue> register(String name) {
-    return GameRuleRegistry.register(
-        name, GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
+  private static GameRule<Boolean> registerRule(String name) {
+    return GameRuleBuilder.forBoolean(true)
+        .category(GameRuleCategory.MOBS)
+        .buildAndRegister(identifier(name));
+  }
+
+  private static Identifier identifier(String path) {
+    return Identifier.fromNamespaceAndPath(NAMESAPCE, path);
   }
 
   @Override
