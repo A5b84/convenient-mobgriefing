@@ -1,8 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 
-import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
-import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRuleOverride;
-
+import io.github.a5b84.convenientmobgriefing.Mod;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
@@ -28,7 +26,7 @@ public class LayeredCauldronBlockMixin {
               target =
                   "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z"))
   private void enableMobGriefingOverride(CallbackInfo ci) {
-    canProjectileModifyAtRuleOverride = LENIENT_GRIEFING;
+    Mod.canProjectileModifyAtRuleOverride = Mod.LENIENT_GRIEFING;
   }
 
   @Inject(
@@ -40,6 +38,6 @@ public class LayeredCauldronBlockMixin {
                   "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z",
               shift = At.Shift.AFTER))
   private void disableMobGriefingOverride(CallbackInfo ci) {
-    canProjectileModifyAtRuleOverride = null;
+    Mod.canProjectileModifyAtRuleOverride = null;
   }
 }

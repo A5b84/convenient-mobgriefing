@@ -1,7 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 
-import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
-
+import io.github.a5b84.convenientmobgriefing.Mod;
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import net.minecraft.world.entity.animal.allay.Allay;
 import net.minecraft.world.level.GameRules;
@@ -18,6 +17,6 @@ public abstract class AllayMixin {
       at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
   private GameRules.Key<GameRules.BooleanValue> mobGriefingProxy(
       GameRules.Key<GameRules.BooleanValue> old) {
-    return LENIENT_GRIEFING;
+    return Mod.LENIENT_GRIEFING;
   }
 }

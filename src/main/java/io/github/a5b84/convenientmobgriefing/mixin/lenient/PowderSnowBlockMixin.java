@@ -1,8 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 
-import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
-import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRuleOverride;
-
+import io.github.a5b84.convenientmobgriefing.Mod;
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import java.util.function.Consumer;
 import net.minecraft.core.BlockPos;
@@ -38,7 +36,7 @@ public abstract class PowderSnowBlockMixin {
       at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
   private static GameRules.Key<GameRules.BooleanValue> mobGriefingProxy(
       GameRules.Key<GameRules.BooleanValue> old) {
-    return LENIENT_GRIEFING;
+    return Mod.LENIENT_GRIEFING;
   }
 
   @Inject(
@@ -49,7 +47,7 @@ public abstract class PowderSnowBlockMixin {
               target =
                   "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z"))
   private static void enableMobGriefingOverride(CallbackInfo ci) {
-    canProjectileModifyAtRuleOverride = LENIENT_GRIEFING;
+    Mod.canProjectileModifyAtRuleOverride = Mod.LENIENT_GRIEFING;
   }
 
   @Inject(
@@ -61,6 +59,6 @@ public abstract class PowderSnowBlockMixin {
                   "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z",
               shift = At.Shift.AFTER))
   private static void disableMobGriefingOverride(CallbackInfo ci) {
-    canProjectileModifyAtRuleOverride = null;
+    Mod.canProjectileModifyAtRuleOverride = null;
   }
 }

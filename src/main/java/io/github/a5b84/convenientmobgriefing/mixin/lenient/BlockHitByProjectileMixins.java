@@ -1,8 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 
-import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
-import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRuleOverride;
-
+import io.github.a5b84.convenientmobgriefing.Mod;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.ChorusFlowerBlock;
@@ -26,7 +24,7 @@ public class BlockHitByProjectileMixins {
               target =
                   "Lnet/minecraft/world/entity/projectile/Projectile;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z"))
   private void enableMobGriefingOverride(CallbackInfo ci) {
-    canProjectileModifyAtRuleOverride = LENIENT_GRIEFING;
+    Mod.canProjectileModifyAtRuleOverride = Mod.LENIENT_GRIEFING;
   }
 
   @Inject(
@@ -38,6 +36,6 @@ public class BlockHitByProjectileMixins {
                   "Lnet/minecraft/world/entity/projectile/Projectile;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z",
               shift = At.Shift.AFTER))
   private void disableMobGriefingOverride(CallbackInfo ci) {
-    canProjectileModifyAtRuleOverride = null;
+    Mod.canProjectileModifyAtRuleOverride = null;
   }
 }

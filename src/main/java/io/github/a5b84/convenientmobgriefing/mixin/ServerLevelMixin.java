@@ -1,7 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin;
 
-import static io.github.a5b84.convenientmobgriefing.Mod.createExplosionRuleOverride;
-
+import io.github.a5b84.convenientmobgriefing.Mod;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,6 +13,6 @@ public abstract class ServerLevelMixin {
   @ModifyArg(method = "explode", at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
   private GameRules.Key<GameRules.BooleanValue> mobGriefingProxy(
       GameRules.Key<GameRules.BooleanValue> old) {
-    return createExplosionRuleOverride != null ? createExplosionRuleOverride : old;
+    return Mod.createExplosionRuleOverride != null ? Mod.createExplosionRuleOverride : old;
   }
 }

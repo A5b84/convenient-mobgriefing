@@ -1,8 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.wither;
 
-import static io.github.a5b84.convenientmobgriefing.Mod.WITHER_GRIEFING;
-import static io.github.a5b84.convenientmobgriefing.Mod.createExplosionRuleOverride;
-
+import io.github.a5b84.convenientmobgriefing.Mod;
 import net.minecraft.world.entity.projectile.WitherSkull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,7 +19,7 @@ public abstract class WitherSkullMixin {
               target =
                   "Lnet/minecraft/world/level/Level;explode(Lnet/minecraft/world/entity/Entity;DDDFZLnet/minecraft/world/level/Level$ExplosionInteraction;)V"))
   private void enableMobGriefingOverride(CallbackInfo ci) {
-    createExplosionRuleOverride = WITHER_GRIEFING;
+    Mod.createExplosionRuleOverride = Mod.WITHER_GRIEFING;
   }
 
   @Inject(
@@ -33,6 +31,6 @@ public abstract class WitherSkullMixin {
                   "Lnet/minecraft/world/level/Level;explode(Lnet/minecraft/world/entity/Entity;DDDFZLnet/minecraft/world/level/Level$ExplosionInteraction;)V",
               shift = At.Shift.AFTER))
   private void disableMobGriefingOverride(CallbackInfo ci) {
-    createExplosionRuleOverride = null;
+    Mod.createExplosionRuleOverride = null;
   }
 }
