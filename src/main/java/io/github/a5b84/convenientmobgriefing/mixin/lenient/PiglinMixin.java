@@ -3,22 +3,21 @@ package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
-import net.minecraft.entity.ai.brain.task.FarmerVillagerTask;
-import net.minecraft.world.GameRules;
+import net.minecraft.world.entity.monster.piglin.Piglin;
+import net.minecraft.world.level.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-/** Farmer villagers harvesting crops */
-@Mixin(FarmerVillagerTask.class)
-public abstract class FarmerVillagerTaskMixin {
+/** Mixin for Piglin bartering */
+@Mixin(Piglin.class)
+public abstract class PiglinMixin {
 
   @ModifyArg(
-      method =
-          "shouldRun(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/passive/VillagerEntity;)Z",
+      method = "wantsToPickUp",
       at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
-  private GameRules.Key<GameRules.BooleanRule> mobGriefingProxy(
-      GameRules.Key<GameRules.BooleanRule> old) {
+  private GameRules.Key<GameRules.BooleanValue> mobGriefingProxy(
+      GameRules.Key<GameRules.BooleanValue> old) {
     return LENIENT_GRIEFING;
   }
 }

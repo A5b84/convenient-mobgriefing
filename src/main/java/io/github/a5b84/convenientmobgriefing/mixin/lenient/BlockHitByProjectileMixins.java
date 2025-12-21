@@ -3,17 +3,17 @@ package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRuleOverride;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.CampfireBlock;
-import net.minecraft.block.ChorusFlowerBlock;
-import net.minecraft.block.PointedDripstoneBlock;
-import net.minecraft.block.TntBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.ChorusFlowerBlock;
+import net.minecraft.world.level.block.PointedDripstoneBlock;
+import net.minecraft.world.level.block.TntBlock;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** Blocks reacting to being hit by projectiles through {@link Block#onProjectileHit} */
+/** Mixin for blocks reacting to being hit by projectiles through {@link Block#onProjectileHit} */
 @SuppressWarnings("JavadocReference")
 @Mixin({CampfireBlock.class, ChorusFlowerBlock.class, PointedDripstoneBlock.class, TntBlock.class})
 public class BlockHitByProjectileMixins {
@@ -24,7 +24,7 @@ public class BlockHitByProjectileMixins {
           @At(
               value = "INVOKE",
               target =
-                  "Lnet/minecraft/entity/projectile/ProjectileEntity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z"))
+                  "Lnet/minecraft/world/entity/projectile/Projectile;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z"))
   private void enableMobGriefingOverride(CallbackInfo ci) {
     canProjectileModifyAtRuleOverride = LENIENT_GRIEFING;
   }
@@ -35,7 +35,7 @@ public class BlockHitByProjectileMixins {
           @At(
               value = "INVOKE",
               target =
-                  "Lnet/minecraft/entity/projectile/ProjectileEntity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z",
+                  "Lnet/minecraft/world/entity/projectile/Projectile;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z",
               shift = At.Shift.AFTER))
   private void disableMobGriefingOverride(CallbackInfo ci) {
     canProjectileModifyAtRuleOverride = null;

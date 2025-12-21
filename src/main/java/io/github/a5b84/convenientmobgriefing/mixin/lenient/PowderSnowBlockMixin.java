@@ -5,14 +5,14 @@ import static io.github.a5b84.convenientmobgriefing.Mod.canProjectileModifyAtRul
 
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import java.util.function.Consumer;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.PowderSnowBlock;
-import net.minecraft.entity.CollisionEvent;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityCollisionHandler;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.GameRules;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
+import net.minecraft.world.entity.InsideBlockEffectType;
+import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.PowderSnowBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,14 +20,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-/** Entities melting Powder Snow when on fire */
+/** Mixin for entities melting Powder Snow when on fire */
 @Mixin(PowderSnowBlock.class)
 public abstract class PowderSnowBlockMixin {
 
   /**
-   * Lambda parameter passed to {@link EntityCollisionHandler#addPreCallback(CollisionEvent,
-   * Consumer)} in {@link PowderSnowBlock#onEntityCollision(BlockState, World, BlockPos, Entity,
-   * EntityCollisionHandler)}.
+   * Lambda parameter passed to {@link InsideBlockEffectApplier#runBefore(InsideBlockEffectType,
+   * Consumer)} in {@link PowderSnowBlock#entityInside(BlockState, Level, BlockPos, Entity,
+   * InsideBlockEffectApplier)}.
    */
   @Unique
   @SuppressWarnings("JavadocReference")
@@ -36,8 +36,8 @@ public abstract class PowderSnowBlockMixin {
   @ModifyArg(
       method = EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME,
       at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
-  private static GameRules.Key<GameRules.BooleanRule> mobGriefingProxy(
-      GameRules.Key<GameRules.BooleanRule> old) {
+  private static GameRules.Key<GameRules.BooleanValue> mobGriefingProxy(
+      GameRules.Key<GameRules.BooleanValue> old) {
     return LENIENT_GRIEFING;
   }
 
@@ -47,7 +47,7 @@ public abstract class PowderSnowBlockMixin {
           @At(
               value = "INVOKE",
               target =
-                  "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z"))
+                  "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z"))
   private static void enableMobGriefingOverride(CallbackInfo ci) {
     canProjectileModifyAtRuleOverride = LENIENT_GRIEFING;
   }
@@ -58,7 +58,7 @@ public abstract class PowderSnowBlockMixin {
           @At(
               value = "INVOKE",
               target =
-                  "Lnet/minecraft/entity/Entity;canModifyAt(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;)Z",
+                  "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z",
               shift = At.Shift.AFTER))
   private static void disableMobGriefingOverride(CallbackInfo ci) {
     canProjectileModifyAtRuleOverride = null;

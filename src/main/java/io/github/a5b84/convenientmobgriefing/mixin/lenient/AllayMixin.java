@@ -3,20 +3,21 @@ package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 import static io.github.a5b84.convenientmobgriefing.Mod.LENIENT_GRIEFING;
 
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
-import net.minecraft.world.GameRules;
+import net.minecraft.world.entity.animal.allay.Allay;
+import net.minecraft.world.level.GameRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-/** Entities with the Weaving status effect placing cobweb on death */
-@Mixin(targets = "net.minecraft.entity.effect.WeavingStatusEffect")
-public class WeavingStatusEffectMixin {
+/** Mixin for Allays picking up items */
+@Mixin(Allay.class)
+public abstract class AllayMixin {
 
   @ModifyArg(
-      method = "onEntityRemoval",
+      method = "wantsToPickUp",
       at = @At(value = "INVOKE", target = Targets.GET_RULE_BOOLEAN))
-  private GameRules.Key<GameRules.BooleanRule> mobGriefingProxy(
-      GameRules.Key<GameRules.BooleanRule> old) {
+  private GameRules.Key<GameRules.BooleanValue> mobGriefingProxy(
+      GameRules.Key<GameRules.BooleanValue> old) {
     return LENIENT_GRIEFING;
   }
 }
