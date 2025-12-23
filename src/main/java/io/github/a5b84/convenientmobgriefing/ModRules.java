@@ -17,7 +17,7 @@ public final class ModRules {
   public static final GameRule<Boolean> WITHER_GRIEFING = registerBaseRule("wither_griefing");
   public static final GameRule<Boolean> DRAGON_GRIEFING = registerBaseRule("dragon_griefing");
 
-  public static final GameRule<OverrideMode>
+  public static final GameRule<Boolean>
       CREEPER_EXPLOSIONS = registerOverrideRule("creeper_explosions", GameRules.MOB_GRIEFING),
       ENDERMEN_MOVE_BLOCKS = registerOverrideRule("endermen_move_blocks", GameRules.MOB_GRIEFING),
       FIREBALL_EXPLOSIONS = registerOverrideRule("fireball_explosions", GameRules.MOB_GRIEFING),
@@ -53,13 +53,13 @@ public final class ModRules {
    * Rule to use instead of {@link GameRules#MOB_GRIEFING} in calls to {@link Level#explode}. Should
    * be ignored when {@code null}
    */
-  @Nullable public static GameRule<OverrideMode> explodeRuleOverride;
+  @Nullable public static GameRule<Boolean> explodeRuleOverride;
 
   /**
    * Rule to use instead of {@link GameRules#MOB_GRIEFING} in calls to {@link
    * Projectile#mayInteract}. Should be ignored when {@code null}
    */
-  @Nullable public static GameRule<OverrideMode> projectileMayInteractOverride;
+  @Nullable public static GameRule<Boolean> projectileMayInteractOverride;
 
   private static GameRule<Boolean> registerBaseRule(String name) {
     return GameRuleBuilder.forBoolean(true)
@@ -67,17 +67,15 @@ public final class ModRules {
         .buildAndRegister(Mod.identifier(name));
   }
 
-  private static GameRule<OverrideMode> registerOverrideRule(
-      String name, GameRule<Boolean> baseRule) {
+  private static GameRule<Boolean> registerOverrideRule(String name, GameRule<Boolean> baseRule) {
     Identifier baseRuleIdentifier = baseRule.getIdentifier();
     Identifier overrideIdentifier =
-        Mod.identifier(baseRuleIdentifier.getPath() + "/overrides/" + name);
-    GameRule<OverrideMode> rule =
+        Mod.identifier(baseRuleIdentifier.getPath() + ".override." + name);
+    GameRule<OverrideMode> overrideRule =
         GameRuleBuilder.forEnum(OverrideMode.DEFAULT)
             .category(GameRuleCategory.MOBS)
             .buildAndRegister(overrideIdentifier);
-    ((GameRuleAccess) (Object) rule).convenientMobGriefing_setBaseRule(baseRule);
-    return rule;
+    return new MobGriefingOverrideDynamicGameRule(overrideRule, baseRule);
   }
 
   public static void registerRules() {

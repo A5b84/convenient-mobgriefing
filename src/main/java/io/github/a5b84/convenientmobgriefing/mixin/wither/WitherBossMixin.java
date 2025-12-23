@@ -1,7 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.wither;
 
 import io.github.a5b84.convenientmobgriefing.ModRules;
-import io.github.a5b84.convenientmobgriefing.OverrideMode;
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.level.gamerules.GameRule;
@@ -18,7 +17,7 @@ public abstract class WitherBossMixin {
   @ModifyArg(
       method = "customServerAiStep",
       at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
-  private GameRule<OverrideMode> mobGriefingProxy(GameRule<Boolean> old) {
+  private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
     return ModRules.WITHER_DESTROYS_BLOCKS_WHEN_HURT;
   }
 

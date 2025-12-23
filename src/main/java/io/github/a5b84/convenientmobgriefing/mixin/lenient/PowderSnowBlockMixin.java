@@ -1,7 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 
 import io.github.a5b84.convenientmobgriefing.ModRules;
-import io.github.a5b84.convenientmobgriefing.OverrideMode;
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import java.util.function.Consumer;
 import net.minecraft.core.BlockPos;
@@ -35,7 +34,7 @@ public abstract class PowderSnowBlockMixin {
   @ModifyArg(
       method = EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME,
       at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
-  private static GameRule<OverrideMode> mobGriefingProxy(GameRule<Boolean> old) {
+  private static GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
     return ModRules.MOBS_MELT_POWDER_SNOW;
   }
 

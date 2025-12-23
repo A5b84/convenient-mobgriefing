@@ -1,7 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.mob;
 
 import io.github.a5b84.convenientmobgriefing.ModRules;
-import io.github.a5b84.convenientmobgriefing.OverrideMode;
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.level.gamerules.GameRule;
@@ -14,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 public abstract class ArmorStandMixin {
 
   @ModifyArg(method = "hurtServer", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
-  private static GameRule<OverrideMode> mobGriefingProxy(GameRule<Boolean> old) {
+  private static GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
     return ModRules.MOBS_AFFECT_INANIMATE_ENTITIES;
   }
 }

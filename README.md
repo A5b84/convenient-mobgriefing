@@ -1,16 +1,14 @@
 # Convenient mobGriefing
 
-A [Fabric](https://fabricmc.net) mod that gives more control over the `mob_griefing` game rule by splitting it into four:
-- `mob_griefing` for most mobs that destroy your world
-- `lenient_griefing` for passive mobs and things that aren't really annoying
+A [Fabric](https://fabricmc.net) mod that gives more control over the `mob_griefing` game rule by splitting it into the following four broad rules:
+- `mob_griefing` for hostile mob behaviors that generally have a negative impact
+- `lenient_griefing` for behaviors that are generally not negative and/or can be easily avoided
 - `wither_griefing` for the Wither
 - `dragon_griefing` for the Ender Dragon
 
-Requires Fabric API ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/fabric-api) / [Modrinth](https://modrinth.com/mod/fabric-api)). New game rules are enabled by default.
+These can be further configured to toggle individual mob behaviors covered by the vanilla `mob_griefing` rule.
 
-A changelog is available [here](CHANGELOG.md).
-
-`mob_griefing` controls:
+With this mod, `mob_griefing` controls:
 - Creepers and Ghasts destruction
 - Endermen taking and placing blocks
 - Silverfish infesting blocks
@@ -46,5 +44,18 @@ A changelog is available [here](CHANGELOG.md).
 - Evokers wololo-ing Sheeps
 
 `wither_griefing` and `dragon_griefing` respectively control whether the Wither and the Ender Dragon can destroy blocks.
+
+Requires Fabric API ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/fabric-api) / [Modrinth](https://modrinth.com/mod/fabric-api)).
+A changelog is available [here](CHANGELOG.md).
+
+## Configuration
+
+New game rules can be modified like any vanilla game rule and are enabled by default.
+
+Behaviors covered by the broad game rules can be individually toggled using override rules, e.g. `convenient_mobgriefing:lenient_griefing.override.mobs_pick_up_items` controls whether mobs can pick up items.
+Override rules have three possible values:
+- `default`: the override is inactive, i.e. the behavior is controlled by its base rule (`convenient_mobgriefing:lenient_griefing` in the previous example)
+- `true`: the behavior is enabled independently of its base rule
+- `false`: the behavior is disabled independently of its base rule
 
 Links: [CurseForge](https://www.curseforge.com/minecraft/mc-mods/convenient-mobgriefing) · [GitHub](https://github.com/A5b84/convenient-mobgriefing) · [Modrinth](https://modrinth.com/mod/convenient-mobgriefing)

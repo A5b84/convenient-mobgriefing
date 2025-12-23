@@ -1,7 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 
 import io.github.a5b84.convenientmobgriefing.ModRules;
-import io.github.a5b84.convenientmobgriefing.OverrideMode;
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import net.minecraft.world.entity.ai.behavior.HarvestFarmland;
 import net.minecraft.world.level.gamerules.GameRule;
@@ -17,7 +16,7 @@ public abstract class HarvestFarmlandMixin {
       method =
           "checkExtraStartConditions(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/npc/villager/Villager;)Z",
       at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
-  private GameRule<OverrideMode> mobGriefingProxy(GameRule<Boolean> old) {
+  private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
     return ModRules.VILLAGER_FARMING;
   }
 }

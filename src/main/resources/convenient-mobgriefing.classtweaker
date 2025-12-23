@@ -6,3 +6,4 @@ accessible class net/minecraft/world/entity/monster/EnderMan$EndermanTakeBlockGo
 accessible class net/minecraft/world/entity/monster/Silverfish$SilverfishMergeWithStoneGoal
 accessible class net/minecraft/world/entity/monster/Silverfish$SilverfishWakeUpFriendsGoal
 accessible class net/minecraft/world/entity/monster/zombie/Zombie$ZombieAttackTurtleEggGoal
+extendable class net/minecraft/world/level/gamerules/GameRule
