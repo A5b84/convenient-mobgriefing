@@ -2,11 +2,13 @@
 
 ### [2.1.8](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.8)
 - Updated to 1.21.11
+- Effects of Wind Charges and similar explosions are now controlled by `lenient_griefing`
 - Renamed the game rules to match vanilla changes:
   - `lenientGriefing` is now `convenient_mobgriefing:lenient_griefing`
   - `witherGriefing` is now `convenient_mobgriefing:wither_griefing`
   - `dragonGriefing` is now `convenient_mobgriefing:dragon_griefing`
   - Existing rule settings in 1.21.10- worlds automatically carry over when first opening the world in 1.21.11+
+- Fixed Ravagers destroying certain crops possibly being controlled by `mob_griefing` instead of `lenient_griefing` 
 
 ### [2.1.7](https://github.com/A5b84/convenient-mobgriefing/releases/tag/v2.1.7)
 - Updated to 1.21.10

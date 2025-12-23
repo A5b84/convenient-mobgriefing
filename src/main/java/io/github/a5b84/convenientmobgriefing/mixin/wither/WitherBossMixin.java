@@ -1,6 +1,7 @@
 package io.github.a5b84.convenientmobgriefing.mixin.wither;
 
-import io.github.a5b84.convenientmobgriefing.Mod;
+import io.github.a5b84.convenientmobgriefing.ModRules;
+import io.github.a5b84.convenientmobgriefing.OverrideMode;
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.level.gamerules.GameRule;
@@ -17,8 +18,8 @@ public abstract class WitherBossMixin {
   @ModifyArg(
       method = "customServerAiStep",
       at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
-  private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
-    return Mod.WITHER_GRIEFING;
+  private GameRule<OverrideMode> mobGriefingProxy(GameRule<Boolean> old) {
+    return ModRules.WITHER_DESTROYS_BLOCKS_WHEN_HURT;
   }
 
   /** Initial explosion */
@@ -30,7 +31,7 @@ public abstract class WitherBossMixin {
               target =
                   "Lnet/minecraft/server/level/ServerLevel;explode(Lnet/minecraft/world/entity/Entity;DDDFZLnet/minecraft/world/level/Level$ExplosionInteraction;)V"))
   private void enableMobGriefingOverride(CallbackInfo ci) {
-    Mod.explodeRuleOverride = Mod.WITHER_GRIEFING;
+    ModRules.explodeRuleOverride = ModRules.WITHER_EXPLOSIONS;
   }
 
   @Inject(
@@ -42,6 +43,6 @@ public abstract class WitherBossMixin {
                   "Lnet/minecraft/server/level/ServerLevel;explode(Lnet/minecraft/world/entity/Entity;DDDFZLnet/minecraft/world/level/Level$ExplosionInteraction;)V",
               shift = At.Shift.AFTER))
   private void disableMobGriefingOverride(CallbackInfo ci) {
-    Mod.explodeRuleOverride = null;
+    ModRules.explodeRuleOverride = null;
   }
 }

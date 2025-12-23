@@ -15,7 +15,8 @@ A changelog is available [here](CHANGELOG.md).
 - Endermen taking and placing blocks
 - Silverfish infesting blocks
 - Zombies and Vindicators breaking doors
-- Goats ramming Armor Stands
+- Goats, Nautiluses and Ravagers attacking Armor Stands
+- Item Frames, Leashes and Paintings being affected by mobs 
 
 `lenient_griefing` controls:
 - Villagers harvesting crops
@@ -27,6 +28,7 @@ A changelog is available [here](CHANGELOG.md).
 - the Weaving status effect placing cobwebs
 - Rabbits eating carrot crops
 - Foxes eating Sweet Berries
+- Wind Charges and similar explosions affecting blocks and entities
 - non-player entities:
   - picking up dropped items
   - turning farmland into dirt

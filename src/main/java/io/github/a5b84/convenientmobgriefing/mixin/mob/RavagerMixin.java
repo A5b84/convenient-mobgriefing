@@ -1,4 +1,4 @@
-package io.github.a5b84.convenientmobgriefing.mixin.lenient;
+package io.github.a5b84.convenientmobgriefing.mixin.mob;
 
 import io.github.a5b84.convenientmobgriefing.ModRules;
 import io.github.a5b84.convenientmobgriefing.OverrideMode;
@@ -9,12 +9,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
-/** Mixin for Ravagers destroying leaves */
+/** Mixin for Ravager roars */
 @Mixin(Ravager.class)
 public abstract class RavagerMixin {
 
-  @ModifyArg(method = "aiStep", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
-  private GameRule<OverrideMode> mobGriefingProxy(GameRule<Boolean> old) {
-    return ModRules.RAVAGER_GRIEFING;
+  @ModifyArg(method = "roar", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
+  private static GameRule<OverrideMode> mobGriefingProxy(GameRule<Boolean> old) {
+    return ModRules.MOBS_AFFECT_INANIMATE_ENTITIES;
   }
 }

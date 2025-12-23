@@ -1,6 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.dragon;
 
-import io.github.a5b84.convenientmobgriefing.Mod;
+import io.github.a5b84.convenientmobgriefing.ModRules;
 import io.github.a5b84.convenientmobgriefing.mixin.Targets;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.level.gamerules.GameRule;
@@ -14,6 +14,6 @@ public abstract class EnderDragonMixin {
 
   @ModifyArg(method = "checkWalls", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
   private GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
-    return Mod.DRAGON_GRIEFING;
+    return ModRules.DRAGON_GRIEFING;
   }
 }

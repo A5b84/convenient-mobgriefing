@@ -1,6 +1,6 @@
 package io.github.a5b84.convenientmobgriefing.mixin.lenient;
 
-import io.github.a5b84.convenientmobgriefing.Mod;
+import io.github.a5b84.convenientmobgriefing.ModRules;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.gamerules.GameRules;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * {@link Entity#mayInteract}) so this only affects projectiles
  */
 @Mixin(LayeredCauldronBlock.class)
-public class LayeredCauldronBlockMixin {
+public abstract class LayeredCauldronBlockMixin {
 
   @Inject(
       method = "method_71627",
@@ -26,7 +26,7 @@ public class LayeredCauldronBlockMixin {
               target =
                   "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z"))
   private void enableMobGriefingOverride(CallbackInfo ci) {
-    Mod.projectileMayInteractOverride = Mod.LENIENT_GRIEFING;
+    ModRules.projectileMayInteractOverride = ModRules.MOB_PROJECTILES_AFFECT_BLOCKS;
   }
 
   @Inject(
@@ -38,6 +38,6 @@ public class LayeredCauldronBlockMixin {
                   "Lnet/minecraft/world/entity/Entity;mayInteract(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;)Z",
               shift = At.Shift.AFTER))
   private void disableMobGriefingOverride(CallbackInfo ci) {
-    Mod.projectileMayInteractOverride = null;
+    ModRules.projectileMayInteractOverride = null;
   }
 }

@@ -17,9 +17,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-            "io.github.a5b84.convenientmobgriefing.Mod"
+			"io.github.a5b84.convenientmobgriefing.Mod"
 		]
 	},
+	"accessWidener": "convenient-mobgriefing.classtweaker",
 	"mixins": [
 		"convenient-mobgriefing.mixins.json"
 	],
