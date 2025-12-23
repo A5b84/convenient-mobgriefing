@@ -1,5 +1,3 @@
-# Convenient mobGriefing
-
 A [Fabric](https://fabricmc.net) mod that gives more control over the `mob_griefing` game rule by splitting it into the following four broad rules:
 - `mob_griefing` for hostile mob behaviors that generally have a negative impact
 - `lenient_griefing` for behaviors that are generally not negative and/or can be easily avoided
@@ -45,7 +43,7 @@ With this mod, `mob_griefing` controls:
 
 `wither_griefing` and `dragon_griefing` respectively control whether the Wither and the Ender Dragon can destroy blocks.
 
-Requires Fabric API ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/fabric-api) / [Modrinth](https://modrinth.com/mod/fabric-api)).
+Requires [Fabric API](https://modrinth.com/mod/fabric-api).
 A changelog is available [here](CHANGELOG.md).
 
 ## Configuration
