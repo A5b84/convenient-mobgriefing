@@ -3,7 +3,7 @@
 	"id": "convenient-mobgriefing",
 	"version": "${version}",
 	"name": "Convenient mobGriefing",
-	"description": "Gives more control over the mobGriefing game rule by splitting it into four.",
+	"description": "Gives more control over the mob_griefing game rule by splitting it into four rules with additional overrides for individual behaviors.",
 	"authors": [
 		"A5b84"
 	],
