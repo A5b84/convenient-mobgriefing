@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(GameRuleRegistryFix.class)
 public abstract class GameRuleRegistryFixMixin {
 
-  @ModifyReturnValue(method = "method_76071", at = @At("RETURN"))
+  @ModifyReturnValue(method = "lambda$makeRule$2", at = @At("RETURN"))
   private static Dynamic<?> fixModeGameRules(Dynamic<?> dynamic) {
     return dynamic
         .renameAndFixField(

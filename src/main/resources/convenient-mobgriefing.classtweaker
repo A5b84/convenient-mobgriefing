@@ -1,4 +1,4 @@
-classTweaker v1 named
+classTweaker v1 official
 accessible class net/minecraft/world/effect/WeavingMobEffect
 accessible class net/minecraft/world/entity/animal/rabbit/Rabbit$RaidGardenGoal
 accessible class net/minecraft/world/entity/monster/EnderMan$EndermanLeaveBlockGoal

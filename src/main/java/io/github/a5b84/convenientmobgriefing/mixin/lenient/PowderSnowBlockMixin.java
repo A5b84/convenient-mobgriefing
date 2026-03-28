@@ -25,11 +25,11 @@ public abstract class PowderSnowBlockMixin {
   /**
    * Lambda parameter passed to {@link InsideBlockEffectApplier#runBefore(InsideBlockEffectType,
    * Consumer)} in {@link PowderSnowBlock#entityInside(BlockState, Level, BlockPos, Entity,
-   * InsideBlockEffectApplier)}.
+   * InsideBlockEffectApplier, boolean)}.
    */
   @Unique
   @SuppressWarnings("JavadocReference")
-  private static final String EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME = "method_67681";
+  private static final String EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME = "lambda$entityInside$0";
 
   @ModifyArg(
       method = EXTINGUISH_ON_ENTITY_COLLISION_LAMBDA_NAME,

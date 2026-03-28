@@ -12,7 +12,9 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(GoatAi.class)
 public abstract class GoatAiMixin {
 
-  @ModifyArg(method = "method_36285", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
+  @ModifyArg(
+      method = "lambda$static$0",
+      at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
   private static GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
     return ModRules.MOBS_AFFECT_INANIMATE_ENTITIES;
   }

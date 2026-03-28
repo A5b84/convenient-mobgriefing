@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class LayeredCauldronBlockMixin {
 
   @Inject(
-      method = "method_71627",
+      method = "lambda$entityInside$0",
       at =
           @At(
               value = "INVOKE",
@@ -30,7 +30,7 @@ public abstract class LayeredCauldronBlockMixin {
   }
 
   @Inject(
-      method = "method_71627",
+      method = "lambda$entityInside$0",
       at =
           @At(
               value = "INVOKE",

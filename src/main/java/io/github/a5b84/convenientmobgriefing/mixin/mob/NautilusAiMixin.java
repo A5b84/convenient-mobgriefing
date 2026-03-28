@@ -12,7 +12,9 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(NautilusAi.class)
 public abstract class NautilusAiMixin {
 
-  @ModifyArg(method = "method_75171", at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
+  @ModifyArg(
+      method = "lambda$static$0",
+      at = @At(value = "INVOKE", target = Targets.GET_RULE_VALUE))
   private static GameRule<Boolean> mobGriefingProxy(GameRule<Boolean> old) {
     return ModRules.MOBS_AFFECT_INANIMATE_ENTITIES;
   }

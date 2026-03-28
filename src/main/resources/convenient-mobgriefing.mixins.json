@@ -14,7 +14,7 @@
 		"lenient.EatBerriesGoalMixin",
 		"lenient.EatBlockGoalMixin",
 		"lenient.EvokerWololoSpellGoalMixin",
-		"lenient.FarmBlockMixin",
+		"lenient.FarmlandBlockMixin",
 		"lenient.HarvestFarmlandMixin",
 		"lenient.LayeredCauldronBlockMixin",
 		"lenient.LivingEntityMixin",
