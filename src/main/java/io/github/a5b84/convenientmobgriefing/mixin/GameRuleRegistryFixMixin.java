@@ -30,7 +30,7 @@ public abstract class GameRuleRegistryFixMixin {
   }
 
   @Shadow
-  private static Dynamic<?> convertBoolean(Dynamic<?> dynamic) {
+  private static Dynamic<?> convertBoolean(Dynamic<?> oldValue) {
     throw new AssertionError();
   }
 }
